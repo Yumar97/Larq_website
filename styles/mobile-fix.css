@@ -128,30 +128,60 @@ body {
         padding-top: 80px !important;
     }
 
-    /* Hero section responsive */
+    /* Hero section responsive - CORRECCIÓN COMPLETA */
     .hero.gallery-hero {
-        min-height: 60vh !important;
+        min-height: 100vh !important;
         padding: 80px 0 2rem 0 !important;
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%) !important;
+        position: relative !important;
+        display: flex !important;
+        align-items: center !important;
+        overflow: hidden !important;
     }
 
+    /* Fondo del hero */
+    .hero.gallery-hero .hero-background {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-attachment: scroll !important; /* Cambiar de fixed a scroll para móvil */
+        z-index: 1 !important;
+    }
+
+    /* Overlay del hero */
+    .hero.gallery-hero .hero-overlay {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(22, 33, 62, 0.8) 50%, rgba(15, 52, 96, 0.9) 100%) !important;
+        z-index: 2 !important;
+    }
+
+    /* Contenido del hero */
     .hero.gallery-hero .hero-content {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
         text-align: center !important;
-        padding: 0 1rem !important;
+        padding: 2rem 1rem !important;
         gap: 2rem !important;
         max-width: 100% !important;
-        margin: 0 !important;
+        margin: 0 auto !important;
+        position: relative !important;
+        z-index: 3 !important;
+        color: white !important;
+        min-height: 60vh !important;
+        justify-content: center !important;
     }
 
-    .hero.gallery-hero .hero-text {
-        order: 2 !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        max-width: 100% !important;
-    }
-
+    /* Imagen del arquitecto */
     .hero.gallery-hero .hero-image {
         order: 1 !important;
         margin: 0 !important;
@@ -160,17 +190,37 @@ body {
         flex-direction: column !important;
         align-items: center !important;
         gap: 1rem !important;
+        flex-shrink: 0 !important;
     }
 
     .hero.gallery-hero .image-placeholder {
-        width: 250px !important;
-        height: 280px !important;
+        width: 280px !important;
+        height: 320px !important;
         margin: 0 auto !important;
+        background: rgba(255, 255, 255, 0.1) !important;
+        backdrop-filter: blur(20px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        border-radius: 20px !important;
+        padding: 15px !important;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        position: relative !important;
+        overflow: hidden !important;
     }
 
     .hero.gallery-hero .architect-image {
-        width: 220px !important;
-        height: 250px !important;
+        width: 250px !important;
+        height: 290px !important;
+        border-radius: 16px !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+        object-fit: cover !important;
+        object-position: center top !important;
+        display: block !important;
+        margin-top: 2px !important;
+        border: none !important;
     }
 
     .hero.gallery-hero .floating-badges {
@@ -180,24 +230,106 @@ body {
         justify-content: center !important;
         gap: 0.5rem !important;
         margin-top: 1rem !important;
+        flex-wrap: wrap !important;
+    }
+
+    /* Texto del hero */
+    .hero.gallery-hero .hero-text {
+        order: 2 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+        color: white !important;
+        text-align: center !important;
     }
 
     /* Títulos responsive */
     .hero.gallery-hero .hero-text h1 {
-        font-size: 1.5rem !important;
+        font-size: 1.4rem !important;
         margin-bottom: 1rem !important;
         padding: 0.5rem 0.75rem !important;
+        color: white !important;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+        background: linear-gradient(135deg, rgba(163, 191, 250, 0.15), rgba(124, 157, 247, 0.25)) !important;
+        border-radius: 0.5rem !important;
+        border: 2px solid rgba(163, 191, 250, 0.3) !important;
+        backdrop-filter: blur(20px) !important;
+        display: inline-block !important;
     }
 
     .hero.gallery-hero .hero-subtitle-main {
-        font-size: 1.2rem !important;
+        font-size: 1.1rem !important;
         margin-bottom: 1rem !important;
+        color: white !important;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4) !important;
+        line-height: 1.3 !important;
     }
 
     .hero.gallery-hero .hero-text p {
         font-size: 0.9rem !important;
         line-height: 1.5 !important;
         margin-bottom: 1.5rem !important;
+        color: rgba(255, 255, 255, 0.9) !important;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
+        max-width: 100% !important;
+    }
+
+    /* Botones del hero */
+    .hero.gallery-hero .hero-buttons {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+        align-items: center !important;
+        width: 100% !important;
+        margin-top: 1.5rem !important;
+    }
+
+    .hero.gallery-hero .btn {
+        width: 100% !important;
+        max-width: 280px !important;
+        text-align: center !important;
+        justify-content: center !important;
+        padding: 1rem 1.5rem !important;
+        font-size: 1rem !important;
+        border-radius: 1rem !important;
+        position: relative !important;
+        z-index: 4 !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+        border: 2px solid transparent !important;
+        font-weight: 600 !important;
+        transition: all 0.3s ease !important;
+        text-decoration: none !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 0.5rem !important;
+    }
+
+    .hero.gallery-hero .btn.btn-primary {
+        background: linear-gradient(135deg, #A3BFFA, #7c9df7) !important;
+        color: white !important;
+    }
+
+    .hero.gallery-hero .btn.btn-secondary {
+        background: transparent !important;
+        color: white !important;
+        border-color: rgba(255, 255, 255, 0.5) !important;
+        backdrop-filter: blur(10px) !important;
+    }
+
+    /* Badge del hero */
+    .hero.gallery-hero .hero-badge {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 0.4rem !important;
+        background: rgba(163, 191, 250, 0.2) !important;
+        backdrop-filter: blur(20px) !important;
+        border: 1px solid rgba(163, 191, 250, 0.3) !important;
+        padding: 0.5rem 1rem !important;
+        border-radius: 9999px !important;
+        font-size: 0.8rem !important;
+        font-weight: 600 !important;
+        margin-bottom: 1rem !important;
+        color: #A3BFFA !important;
     }
 }
 
