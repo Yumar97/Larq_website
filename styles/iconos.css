@@ -1,0 +1,498 @@
+/* ===== ICONOS PERSONALIZADOS PARA LARQ ARQUITECTURA ===== */
+/* Reemplazo de FontAwesome con iconos CSS puros */
+
+/* ===== CONFIGURACIÓN BASE ===== */
+[class*="fa-"]:before,
+[class*="fab"]:before,
+[class*="fas"]:before,
+[class*="far"]:before {
+    font-family: inherit !important;
+    font-weight: normal !important;
+    font-style: normal !important;
+    text-decoration: none !important;
+    display: inline-block;
+    line-height: 1;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* ===== ICONOS SOCIALES ===== */
+.fab.fa-linkedin-in:before {
+    content: "in";
+    background: #0077b5;
+    color: white;
+    border-radius: 3px;
+    padding: 2px 4px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.fab.fa-facebook-f:before {
+    content: "f";
+    background: #1877f2;
+    color: white;
+    border-radius: 3px;
+    padding: 2px 6px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.fab.fa-instagram:before {
+    content: "IG";
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: white;
+    border-radius: 6px;
+    padding: 3px 4px;
+    font-size: 0.75em;
+    font-weight: bold;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    letter-spacing: -0.5px;
+}
+
+.fab.fa-youtube:before {
+    content: "▶";
+    background: #ff0000;
+    color: white;
+    border-radius: 3px;
+    padding: 2px 4px;
+    font-size: 0.8em;
+}
+
+/* ===== ICONOS DE CONTACTO ===== */
+.fas.fa-envelope:before {
+    content: "✉️";
+    font-size: 1em;
+}
+
+.fas.fa-phone:before {
+    content: "📞";
+    font-size: 0.9em;
+}
+
+.fas.fa-map-marker-alt:before {
+    content: "📍";
+    font-size: 1em;
+}
+
+.fas.fa-clock:before {
+    content: "🕐";
+    font-size: 1em;
+}
+
+.fas.fa-external-link-alt:before {
+    content: "↗";
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+/* ===== ICONOS DE NAVEGACIÓN ===== */
+.fas.fa-times:before {
+    content: "✕";
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.fas.fa-chevron-left:before {
+    content: "‹";
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.fas.fa-chevron-right:before {
+    content: "›";
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.fas.fa-plus:before {
+    content: "+";
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* ===== ICONOS DE ACCIONES ===== */
+.fas.fa-eye:before {
+    content: "👁";
+    font-size: 1em;
+}
+
+.fas.fa-search-plus:before {
+    content: "🔍";
+    font-size: 1em;
+}
+
+.fas.fa-paper-plane:before {
+    content: "✈";
+    font-size: 1em;
+}
+
+.fas.fa-rocket:before {
+    content: "🚀";
+    font-size: 1em;
+}
+
+.fas.fa-images:before {
+    content: "🖼";
+    font-size: 1em;
+}
+
+.fas.fa-info-circle:before {
+    content: "ℹ";
+    background: #007bff;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 4px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+/* ===== ICONOS DE FILTROS ===== */
+.fas.fa-th:before {
+    content: "⊞";
+    font-size: 1.1em;
+}
+
+.fas.fa-home:before {
+    content: "🏠";
+    font-size: 1em;
+}
+
+.fas.fa-building:before {
+    content: "🏢";
+    font-size: 1em;
+}
+
+.fas.fa-industry:before {
+    content: "🏭";
+    font-size: 1em;
+}
+
+.fas.fa-university:before {
+    content: "🏛";
+    font-size: 1em;
+}
+
+/* ===== ICONOS DE CALENDARIO Y TIEMPO ===== */
+.fas.fa-calendar:before {
+    content: "📅";
+    font-size: 1em;
+}
+
+/* ===== ICONOS DE HERRAMIENTAS Y CONSTRUCCIÓN ===== */
+.fas.fa-hammer:before {
+    content: "🔨";
+    font-size: 1em;
+}
+
+.fas.fa-cogs:before {
+    content: "⚙";
+    font-size: 1em;
+}
+
+.fas.fa-tools:before {
+    content: "🛠";
+    font-size: 1em;
+}
+
+.fas.fa-drafting-compass:before {
+    content: "📐";
+    font-size: 1em;
+}
+
+.fas.fa-clipboard-list:before {
+    content: "📋";
+    font-size: 1em;
+}
+
+.fas.fa-clipboard-check:before {
+    content: "✅";
+    font-size: 1em;
+}
+
+/* ===== ICONOS EDUCATIVOS Y PROFESIONALES ===== */
+.fas.fa-graduation-cap:before {
+    content: "🎓";
+    font-size: 1em;
+}
+
+.fas.fa-project-diagram:before {
+    content: "📊";
+    font-size: 1em;
+}
+
+.fas.fa-briefcase:before {
+    content: "💼";
+    font-size: 1em;
+}
+
+.fas.fa-crown:before {
+    content: "👑";
+    font-size: 1em;
+}
+
+/* ===== ICONOS DE VERIFICACIÓN Y ESTADO ===== */
+.fas.fa-check:before {
+    content: "✓";
+    font-size: 1em;
+    color: #28a745;
+    font-weight: bold;
+}
+
+.fas.fa-check-circle:before {
+    content: "✓";
+    background: #28a745;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 3px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+/* ===== ICONOS DE PREMIOS Y RECONOCIMIENTOS ===== */
+.fas.fa-award:before {
+    content: "🏆";
+    font-size: 1em;
+}
+
+.fas.fa-medal:before {
+    content: "🥇";
+    font-size: 1em;
+}
+
+.fas.fa-trophy:before {
+    content: "🏆";
+    font-size: 1em;
+}
+
+.fas.fa-star:before {
+    content: "⭐";
+    font-size: 1em;
+}
+
+/* ===== ICONOS DE VALORES Y CONCEPTOS ===== */
+.fas.fa-lightbulb:before {
+    content: "💡";
+    font-size: 1em;
+}
+
+.fas.fa-balance-scale:before {
+    content: "⚖";
+    font-size: 1em;
+}
+
+.fas.fa-users:before {
+    content: "👥";
+    font-size: 1em;
+}
+
+.fas.fa-seedling:before {
+    content: "🌱";
+    font-size: 1em;
+}
+
+.fas.fa-leaf:before {
+    content: "🍃";
+    font-size: 1em;
+}
+
+.fas.fa-handshake:before {
+    content: "🤝";
+    font-size: 1em;
+}
+
+.fas.fa-heart:before {
+    content: "❤";
+    font-size: 1em;
+    color: #dc3545;
+}
+
+.fas.fa-shield-alt:before {
+    content: "🛡";
+    font-size: 1em;
+}
+
+/* ===== ICONOS DE VISIÓN Y MISIÓN ===== */
+.fas.fa-bullseye:before {
+    content: "🎯";
+    font-size: 1em;
+}
+
+.fas.fa-eye:before {
+    content: "👁";
+    font-size: 1em;
+}
+
+/* ===== ICONOS DE PROCESO ===== */
+.fas.fa-key:before {
+    content: "🔑";
+    font-size: 1em;
+}
+
+/* ===== ICONOS DE CITAS Y TESTIMONIOS ===== */
+.fas.fa-quote-left:before {
+    content: """;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #6c757d;
+}
+
+/* ===== ICONOS DE USUARIO ===== */
+.fas.fa-user:before {
+    content: "👤";
+    font-size: 2em;
+    opacity: 0.7;
+}
+
+/* ===== ICONOS DE COPYRIGHT ===== */
+.fas.fa-copyright:before {
+    content: "©";
+    font-size: 1em;
+    font-weight: bold;
+}
+
+/* ===== ESTILOS RESPONSIVOS PARA ICONOS ===== */
+@media (max-width: 768px) {
+    [class*="fa-"]:before {
+        font-size: 0.9em;
+    }
+    
+    .fas.fa-user:before {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    [class*="fa-"]:before {
+        font-size: 0.8em;
+    }
+    
+    .fas.fa-user:before {
+        font-size: 1.6em;
+    }
+    
+    .fab.fa-linkedin-in:before,
+    .fab.fa-facebook-f:before,
+    .fab.fa-youtube:before {
+        padding: 1px 3px;
+        font-size: 0.7em;
+    }
+}
+
+/* ===== ANIMACIONES PARA ICONOS ===== */
+.fas.fa-star:before {
+    animation: starTwinkle 2s ease-in-out infinite;
+}
+
+@keyframes starTwinkle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.fas.fa-rocket:before {
+    transition: transform 0.3s ease;
+}
+
+.fas.fa-rocket:hover:before {
+    transform: translateY(-2px);
+}
+
+.fas.fa-lightbulb:before {
+    transition: filter 0.3s ease;
+}
+
+.fas.fa-lightbulb:hover:before {
+    filter: brightness(1.2);
+}
+
+/* ===== ICONOS ESPECIALES CON EFECTOS ===== */
+.fas.fa-heart:before {
+    animation: heartBeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* ===== ICONOS DE REDES SOCIALES CON HOVER ===== */
+.fab.fa-linkedin-in:hover:before {
+    background: #005885;
+}
+
+.fab.fa-facebook-f:hover:before {
+    background: #166fe5;
+}
+
+.fab.fa-instagram:hover:before {
+    background: linear-gradient(45deg, #e6683c 0%, #dc2743 25%, #cc2366 50%, #bc1888 75%, #8a3ab9 100%);
+    transform: scale(1.05);
+}
+
+.fab.fa-youtube:hover:before {
+    background: #cc0000;
+}
+
+/* ===== ICONOS DE VERIFICACIÓN CON ANIMACIÓN ===== */
+.fas.fa-check:before,
+.fas.fa-check-circle:before {
+    animation: checkPulse 2s ease-in-out infinite;
+}
+
+@keyframes checkPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* ===== FALLBACK PARA ICONOS NO DEFINIDOS ===== */
+[class*="fa-"]:not([class*="fa-linkedin-in"]):not([class*="fa-facebook-f"]):not([class*="fa-instagram"]):not([class*="fa-youtube"]):not([class*="fa-envelope"]):not([class*="fa-phone"]):not([class*="fa-map-marker-alt"]):not([class*="fa-clock"]):not([class*="fa-external-link-alt"]):not([class*="fa-times"]):not([class*="fa-chevron-left"]):not([class*="fa-chevron-right"]):not([class*="fa-plus"]):not([class*="fa-eye"]):not([class*="fa-search-plus"]):not([class*="fa-paper-plane"]):not([class*="fa-rocket"]):not([class*="fa-images"]):not([class*="fa-info-circle"]):not([class*="fa-th"]):not([class*="fa-home"]):not([class*="fa-building"]):not([class*="fa-industry"]):not([class*="fa-university"]):not([class*="fa-calendar"]):not([class*="fa-hammer"]):not([class*="fa-cogs"]):not([class*="fa-tools"]):not([class*="fa-drafting-compass"]):not([class*="fa-clipboard-list"]):not([class*="fa-clipboard-check"]):not([class*="fa-graduation-cap"]):not([class*="fa-project-diagram"]):not([class*="fa-briefcase"]):not([class*="fa-crown"]):not([class*="fa-check"]):not([class*="fa-check-circle"]):not([class*="fa-award"]):not([class*="fa-medal"]):not([class*="fa-trophy"]):not([class*="fa-star"]):not([class*="fa-lightbulb"]):not([class*="fa-balance-scale"]):not([class*="fa-users"]):not([class*="fa-seedling"]):not([class*="fa-leaf"]):not([class*="fa-handshake"]):not([class*="fa-heart"]):not([class*="fa-shield-alt"]):not([class*="fa-bullseye"]):not([class*="fa-key"]):not([class*="fa-quote-left"]):not([class*="fa-user"]):not([class*="fa-copyright"]):before {
+    content: "●";
+    color: #6c757d;
+    font-size: 0.8em;
+}
+
+/* ===== MEJORAS DE ACCESIBILIDAD ===== */
+[class*="fa-"]:before {
+    speak: none;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== SOPORTE PARA MODO OSCURO ===== */
+@media (prefers-color-scheme: dark) {
+    .fas.fa-check:before {
+        color: #20c997;
+    }
+    
+    .fas.fa-heart:before {
+        color: #e74c3c;
+    }
+    
+    .fas.fa-quote-left:before {
+        color: #adb5bd;
+    }
+    
+    [class*="fa-"]:not([class*="fa-check"]):not([class*="fa-heart"]):not([class*="fa-quote-left"]):before {
+        filter: brightness(1.2);
+    }
+}
+
+/* ===== OPTIMIZACIONES DE RENDIMIENTO ===== */
+[class*="fa-"] {
+    will-change: transform;
+}
+
+[class*="fa-"]:before {
+    will-change: content, color, background;
+}
+
+/* ===== ESTILOS PARA IMPRESIÓN ===== */
+@media print {
+    [class*="fa-"]:before {
+        color: black !important;
+        background: none !important;
+        animation: none !important;
+    }
+}

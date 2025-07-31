@@ -239,6 +239,7 @@ h3.titulo-tahoma {
     display: flex;
     align-items: center;
     gap: var(--space-3);
+    text-decoration: none;
 }
 
 .logo-image {
@@ -269,6 +270,7 @@ h3.titulo-tahoma {
     letter-spacing: 0.1em;
     text-transform: uppercase;
     margin-top: var(--space-1);
+    text-decoration: none;
 }
 
 .nav-menu {
