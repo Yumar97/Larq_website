@@ -46,3 +46,19 @@ coverage/
 # Temporary folders
 tmp/
 temp/
+
+# Vercel
+.vercel
+
+# Archivos de desarrollo local
+galeria-backup.html
+INFORME_REVISION_CODIGO.md
+organizar-imagenes.bat
+
+# Archivos temporales
+*.tmp
+*.temp
+*~
+
+# Qodo
+.qodo/

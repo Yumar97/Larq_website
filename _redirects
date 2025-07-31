@@ -1,0 +1,31 @@
+# Redirects para Vercel
+# URLs limpias sin .html
+
+/inicio              /index.html           200
+/home                /index.html           200
+/acerca              /index.html           200
+/nosotros            /index.html           200
+
+/contacto            /contacto.html        200
+/contact             /contacto.html        200
+
+/galeria             /galeria.html         200
+/gallery             /galeria.html         200
+/fotos               /galeria.html         200
+
+/gente               /gente.html           200
+/equipo              /gente.html           200
+/team                /gente.html           200
+
+/proyectos           /proyectos.html       200
+/projects            /proyectos.html       200
+/obras               /proyectos.html       200
+
+# Redirects para archivos que no existen
+/favicon.ico         /images/Logo_larq.png 200
+
+# Redirect para URLs con trailing slash
+/*                   /:splat               200
+
+# 404 fallback
+/*                   /index.html           404
