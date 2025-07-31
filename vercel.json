@@ -1,5 +1,7 @@
 {
   "version": 2,
+  "buildCommand": "echo 'Static site ready'",
+  "outputDirectory": ".",
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
