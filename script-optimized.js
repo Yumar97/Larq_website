@@ -890,12 +890,14 @@ class PerformanceOptimizer {
                 console.log('✅ Service Worker registrado:', registration.scope);
                 this.serviceWorkerRegistered = true;
                 
-                // Manejar actualizaciones
+                // Manejar actualizaciones (sin mostrar notificación automática)
                 registration.addEventListener('updatefound', () => {
                     const newWorker = registration.installing;
                     newWorker.addEventListener('statechange', () => {
                         if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                            this.showUpdateNotification();
+                            console.log('✅ Nueva versión disponible en segundo plano');
+                            // No mostrar notificación automática
+                            // this.showUpdateNotification();
                         }
                     });
                 });
