@@ -1,0 +1,62 @@
+# Robots.txt para Larq Arquitectura y Construcción
+# Optimizado para SEO y crawling eficiente
+
+User-agent: *
+Allow: /
+
+# Permitir acceso a recursos importantes
+Allow: /images/
+Allow: /styles-professional.css
+Allow: /script-optimized.js
+Allow: /*.js
+Allow: /*.css
+
+# Bloquear archivos innecesarios para SEO
+Disallow: /service-worker.js
+Disallow: /image-optimizer.js
+Disallow: /font-optimizer.js
+Disallow: /seo-optimizer.js
+Disallow: /*.md
+Disallow: /INFORME_*
+Disallow: /OPTIMIZACION_*
+
+# Permitir específicamente a Googlebot
+User-agent: Googlebot
+Allow: /
+Allow: /images/
+Crawl-delay: 1
+
+# Permitir a Bingbot
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+# Configuración para bots de redes sociales
+User-agent: facebookexternalhit
+Allow: /
+Allow: /images/
+
+User-agent: Twitterbot
+Allow: /
+Allow: /images/
+
+User-agent: LinkedInBot
+Allow: /
+Allow: /images/
+
+# Bloquear bots maliciosos conocidos
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Sitemap
+Sitemap: https://larq.net/sitemap.xml
+
+# Información adicional
+# Host: larq.net
+# Crawl-delay: 1

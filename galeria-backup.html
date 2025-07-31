@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Proyectos - Larq Arquitectura y Construcción</title>
+    <link rel="icon" type="image/png" href="images/Logo_larq.png">
+    <!-- CSS Profesional Consolidado -->
+    <link rel="stylesheet" href="styles/galeria.css">
+    
+    <!-- Fuentes e Iconos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&family=Tahoma:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header y Navegación -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="images/Logo_larq.png" alt="Larq Arquitectura y Construcción" class="logo-image">
+                    <div class="logo-text">
+                        <h2>ARQUITECTURA</h2>
+                        <span> Y CONSTRUCCIÓN</span>
+                    </div>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Acerca de</a></li>
+                    <li><a href="proyectos.html" class="nav-link">Proyectos</a></li>
+                    <li><a href="galeria.html" class="nav-link active">Galería</a></li>
+                    <li><a href="gente.html" class="nav-link">Gente</a></li>
+                    <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+                </ul>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/glenn-landavere-09aba4a/" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.facebook.com/larqarquitecturayconstruccion/?locale=es_LA" target="_blank" class="social-link">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/larq.arquitectura/?hl=es-la" target="_blank" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@glennlandavere9719" target="_blank" class="social-link">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="mailto:glenn.ladavere@larq.net" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                <div class="hamburger" aria-label="Menú de navegación" role="button" tabindex="0">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Filtros de Galería -->
+    <section class="gallery-filters">
+        <div class="container">
+            <div class="filters-header">
+                <h2 class="titulo-tahoma">Explora por Categoría</h2>
+                <p>Filtra los proyectos por tipo para encontrar exactamente lo que buscas</p>
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-th"></i>
+                    <span>Todos</span>
+                </button>
+                <button class="filter-btn" data-filter="residential">
+                    <i class="fas fa-home"></i>
+                    <span>Residencial</span>
+                </button>
+                <button class="filter-btn" data-filter="commercial">
+                    <i class="fas fa-building"></i>
+                    <span>Comercial</span>
+                </button>
+                <button class="filter-btn" data-filter="industrial">
+                    <i class="fas fa-industry"></i>
+                    <span>Industrial</span>
+                </button>
+                <button class="filter-btn" data-filter="institutional">
+                    <i class="fas fa-university"></i>
+                    <span>Institucional</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería Principal -->
+    <section class="main-gallery">
+        <div class="container">
+            <div class="gallery-grid" id="galleryGrid">
+                
+                <!-- Proyecto Hotel Tambo del Inka -->
+                <div class="gallery-item" data-category="commercial">
+                    <div class="gallery-card">
+                        <div class="image-container">
+                            <img src="images/Hotel Tambo del Inka, Urubamba, Cusco/Hotel Tambo del InkaGerencia de ProyectoEmpresa- Bovis Lend Lease (1).jpg" alt="Hotel Tambo del Inka - Vista Principal" loading="lazy">
+                            <div class="image-overlay">
+                                <div class="overlay-content">
+                                    <h3>Hotel Tambo del Inka</h3>
+                                    <p>Proyecto hotelero de lujo en el Valle Sagrado</p>
+                                    <div class="project-tags">
+                                        <span class="tag">Comercial</span>
+                                        <span class="tag">Hotelero</span>
+                                        <span class="tag">Lujo</span>
+                                    </div>
+                                </div>
+                                <div class="overlay-actions">
+                                    <button class="action-btn view-btn" data-image="images/Hotel Tambo del Inka, Urubamba, Cusco/Hotel Tambo del InkaGerencia de ProyectoEmpresa- Bovis Lend Lease (1).jpg">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="action-btn zoom-btn" data-image="images/Hotel Tambo del Inka, Urubamba, Cusco/Hotel Tambo del InkaGerencia de ProyectoEmpresa- Bovis Lend Lease (1).jpg">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <div class="project-meta">
+                                <span class="location"><i class="fas fa-map-marker-alt"></i> Urubamba, Cusco</span>
+                                <span class="year"><i class="fas fa-calendar"></i> 2022</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto Comercial 1 -->
+                <div class="gallery-item" data-category="commercial">
+                    <div class="gallery-card">
+                        <div class="image-container">
+                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Centro Comercial Moderno" loading="lazy">
+                            <div class="image-overlay">
+                                <div class="overlay-content">
+                                    <h3>Centro Comercial Moderno</h3>
+                                    <p>Arquitectura comercial de vanguardia</p>
+                                    <div class="project-tags">
+                                        <span class="tag">Comercial</span>
+                                        <span class="tag">Retail</span>
+                                    </div>
+                                </div>
+                                <div class="overlay-actions">
+                                    <button class="action-btn view-btn" data-image="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="action-btn zoom-btn" data-image="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <div class="project-meta">
+                                <span class="location"><i class="fas fa-map-marker-alt"></i> Miraflores, Lima</span>
+                                <span class="year"><i class="fas fa-calendar"></i> 2022</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto Residencial 2 -->
+                <div class="gallery-item" data-category="residential">
+                    <div class="gallery-card">
+                        <div class="image-container">
+                            <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Villa Contemporánea" loading="lazy">
+                            <div class="image-overlay">
+                                <div class="overlay-content">
+                                    <h3>Villa Contemporánea</h3>
+                                    <p>Elegancia y funcionalidad en armonía</p>
+                                    <div class="project-tags">
+                                        <span class="tag">Residencial</span>
+                                        <span class="tag">Lujo</span>
+                                    </div>
+                                </div>
+                                <div class="overlay-actions">
+                                    <button class="action-btn view-btn" data-image="https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="action-btn zoom-btn" data-image="https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <div class="project-meta">
+                                <span class="location"><i class="fas fa-map-marker-alt"></i> San Isidro, Lima</span>
+                                <span class="year"><i class="fas fa-calendar"></i> 2023</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto Industrial 1 -->
+                <div class="gallery-item" data-category="industrial">
+                    <div class="gallery-card">
+                        <div class="image-container">
+                            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Complejo Industrial" loading="lazy">
+                            <div class="image-overlay">
+                                <div class="overlay-content">
+                                    <h3>Complejo Industrial</h3>
+                                    <p>Eficiencia y seguridad industrial</p>
+                                    <div class="project-tags">
+                                        <span class="tag">Industrial</span>
+                                        <span class="tag">Manufactura</span>
+                                    </div>
+                                </div>
+                                <div class="overlay-actions">
+                                    <button class="action-btn view-btn" data-image="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="action-btn zoom-btn" data-image="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <div class="project-meta">
+                                <span class="location"><i class="fas fa-map-marker-alt"></i> Callao, Lima</span>
+                                <span class="year"><i class="fas fa-calendar"></i> 2021</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto Institucional 1 -->
+                <div class="gallery-item" data-category="institutional">
+                    <div class="gallery-card">
+                        <div class="image-container">
+                            <img src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Centro Educativo" loading="lazy">
+                            <div class="image-overlay">
+                                <div class="overlay-content">
+                                    <h3>Centro Educativo</h3>
+                                    <p>Espacios diseñados para el aprendizaje</p>
+                                    <div class="project-tags">
+                                        <span class="tag">Institucional</span>
+                                        <span class="tag">Educación</span>
+                                    </div>
+                                </div>
+                                <div class="overlay-actions">
+                                    <button class="action-btn view-btn" data-image="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="action-btn zoom-btn" data-image="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <div class="project-meta">
+                                <span class="location"><i class="fas fa-map-marker-alt"></i> Surco, Lima</span>
+                                <span class="year"><i class="fas fa-calendar"></i> 2022</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto Comercial 2 -->
+                <div class="gallery-item" data-category="commercial">
+                    <div class="gallery-card">
+                        <div class="image-container">
+                            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Torre de Oficinas" loading="lazy">
+                            <div class="image-overlay">
+                                <div class="overlay-content">
+                                    <h3>Torre de Oficinas</h3>
+                                    <p>Arquitectura corporativa moderna</p>
+                                    <div class="project-tags">
+                                        <span class="tag">Comercial</span>
+                                        <span class="tag">Oficinas</span>
+                                    </div>
+                                </div>
+                                <div class="overlay-actions">
+                                    <button class="action-btn view-btn" data-image="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="action-btn zoom-btn" data-image="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <div class="project-meta">
+                                <span class="location"><i class="fas fa-map-marker-alt"></i> San Isidro, Lima</span>
+                                <span class="year"><i class="fas fa-calendar"></i> 2023</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto Residencial 3 -->
+                <div class="gallery-item" data-category="residential">
+                    <div class="gallery-card">
+                        <div class="image-container">
+                            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Casa Familiar" loading="lazy">
+                            <div class="image-overlay">
+                                <div class="overlay-content">
+                                    <h3>Casa Familiar</h3>
+                                    <p>Diseño funcional para la familia moderna</p>
+                                    <div class="project-tags">
+                                        <span class="tag">Residencial</span>
+                                        <span class="tag">Familiar</span>
+                                    </div>
+                                </div>
+                                <div class="overlay-actions">
+                                    <button class="action-btn view-btn" data-image="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="action-btn zoom-btn" data-image="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <div class="project-meta">
+                                <span class="location"><i class="fas fa-map-marker-alt"></i> La Molina, Lima</span>
+                                <span class="year"><i class="fas fa-calendar"></i> 2022</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto Industrial 2 -->
+                <div class="gallery-item" data-category="industrial">
+                    <div class="gallery-card">
+                        <div class="image-container">
+                            <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Almacén Logístico" loading="lazy">
+                            <div class="image-overlay">
+                                <div class="overlay-content">
+                                    <h3>Almacén Logístico</h3>
+                                    <p>Optimización de espacios de almacenamiento</p>
+                                    <div class="project-tags">
+                                        <span class="tag">Industrial</span>
+                                        <span class="tag">Logística</span>
+                                    </div>
+                                </div>
+                                <div class="overlay-actions">
+                                    <button class="action-btn view-btn" data-image="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="action-btn zoom-btn" data-image="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <div class="project-meta">
+                                <span class="location"><i class="fas fa-map-marker-alt"></i> Ventanilla, Callao</span>
+                                <span class="year"><i class="fas fa-calendar"></i> 2021</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Imagen -->
+    <div class="image-modal" id="imageModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-image-container">
+                <img id="modalImage" src="" alt="">
+                <div class="modal-navigation">
+                    <button class="nav-btn prev-btn" id="prevBtn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="nav-btn next-btn" id="nextBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="modal-info">
+                <h3 id="modalTitle">Título del Proyecto</h3>
+                <p id="modalDescription">Descripción del proyecto</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección CTA -->
+    <section class="gallery-cta">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-text">
+                    <h2 class="titulo-tahoma">¿Tienes un Proyecto en Mente?</h2>
+                    <p>Convierte tu visión en realidad con nuestro equipo de expertos en arquitectura y construcción.</p>
+                </div>
+                <div class="cta-actions">
+                    <a href="contacto.html" class="btn-professional primary large">
+                        <i class="fas fa-rocket"></i>
+                        Iniciar mi Proyecto
+                    </a>
+                    <a href="index.html" class="btn-professional secondary large">
+                        <i class="fas fa-info-circle"></i>
+                        Conocer Más
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Copyright Footer -->
+    <div style="position: fixed; bottom: 0; left: 0; right: 0; background: rgba(0, 0, 0, 0.3); backdrop-filter: blur(10px); border-top: 1px solid rgba(255, 255, 255, 0.1); padding: 0.75rem 1rem; text-align: center; z-index: 1000;">
+        <div style="display: flex; justify-content: center; align-items: center; gap: 1rem; flex-wrap: wrap; font-size: 0.8rem; color: rgba(255, 255, 255, 0.8);">
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <i class="fas fa-copyright" style="color: rgba(255, 255, 255, 0.6);"></i>
+                <span>2025 LARQ Arquitectura y Construcción</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 0.3rem;">
+                    <i class="fas fa-phone" style="font-size: 0.75rem; width: 12px; text-align: center;"></i>
+                    <span>+51 998 616 265</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.3rem;">
+                    <i class="fas fa-envelope" style="font-size: 0.75rem; width: 12px; text-align: center;"></i>
+                    <span>glenn.ladavere@larq.net</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="galeria-script.js"></script>
+</body>
+</html>
