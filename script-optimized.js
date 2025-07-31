@@ -47,11 +47,19 @@ class MobileNavigation {
         this.navMenu = document.querySelector('.nav-menu');
         this.overlay = document.querySelector('.nav-overlay');
         this.socialLinks = document.querySelector('.social-links');
+        this.isMenuOpen = false;
         this.init();
     }
 
     init() {
         if (!this.hamburger || !this.navMenu) return;
+
+        // Crear overlay si no existe
+        if (!this.overlay) {
+            this.overlay = document.createElement('div');
+            this.overlay.className = 'nav-overlay';
+            document.body.appendChild(this.overlay);
+        }
 
         // Agregar atributos de accesibilidad
         this.hamburger.setAttribute('aria-label', 'Abrir menú de navegación');
@@ -60,7 +68,12 @@ class MobileNavigation {
         this.navMenu.setAttribute('id', 'nav-menu');
 
         // Event listeners
-        this.hamburger.addEventListener('click', () => this.toggle());
+        this.hamburger.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            this.toggle();
+        });
+
         this.hamburger.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
@@ -74,9 +87,7 @@ class MobileNavigation {
         });
 
         // Cerrar menú al hacer clic en el overlay
-        if (this.overlay) {
-            this.overlay.addEventListener('click', () => this.close());
-        }
+        this.overlay.addEventListener('click', () => this.close());
 
         // Cerrar menú con tecla Escape
         document.addEventListener('keydown', (e) => {
@@ -91,6 +102,13 @@ class MobileNavigation {
                 this.close();
             }
         }, 250));
+
+        // Prevenir scroll en body cuando el menú está abierto
+        document.addEventListener('touchmove', (e) => {
+            if (this.isOpen() && !this.navMenu.contains(e.target)) {
+                e.preventDefault();
+            }
+        }, { passive: false });
     }
 
     toggle() {
