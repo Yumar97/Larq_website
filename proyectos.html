@@ -65,7 +65,7 @@
                         <img src="icons/gmail.svg" alt="Gmail" width="24" height="24">
                     </a>
                 </div>
-                <div class="hamburger">
+                <div class="hamburger" aria-label="Menú de navegación" role="button" tabindex="0">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -275,21 +275,6 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="script.js"></script>
     <script src="script-optimized.js"></script>
-    <script>
-        // Navegación móvil
-        document.addEventListener('DOMContentLoaded', function() {
-            const hamburger = document.querySelector('.hamburger');
-            const navMenu = document.querySelector('.nav-menu');
-            
-            if (hamburger && navMenu) {
-                hamburger.addEventListener('click', function() {
-                    hamburger.classList.toggle('active');
-                    navMenu.classList.toggle('active');
-                });
-            }
-        });
-    </script>
 </body>
 </html>
