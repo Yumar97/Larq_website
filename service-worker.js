@@ -11,7 +11,7 @@ const STATIC_ASSETS = [
     '/',
     '/index.html',
     '/acerca.html',
-    '/proyectos.html',
+    '/galeria.html',
     '/gente.html',
     '/contacto.html',
     '/styles-professional.css',

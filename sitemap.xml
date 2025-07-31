@@ -28,9 +28,9 @@
         <priority>0.8</priority>
     </url>
 
-    <!-- Proyectos -->
+    <!-- Galería/Proyectos -->
     <url>
-        <loc>https://larq.net/proyectos.html</loc>
+        <loc>https://larq.net/galeria.html</loc>
         <lastmod>2025-01-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>

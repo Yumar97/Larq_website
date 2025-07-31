@@ -50,7 +50,6 @@ larq-web/
 ├── contacto.html       # Página de contacto
 ├── galeria.html        # Galería de proyectos
 ├── gente.html          # Equipo de trabajo
-├── proyectos.html      # Proyectos destacados
 ├── styles/             # Archivos CSS
 │   ├── index.css
 │   ├── contacto.css
