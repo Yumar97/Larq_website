@@ -1325,4 +1325,76 @@ document.addEventListener('DOMContentLoaded', () => {
     document.head.appendChild(styles);
 
     console.log('🏗️ Sistema Optimizado Avanzado Inicializado');
+    
+    // Verificar si Font Awesome se cargó correctamente
+    setTimeout(() => {
+        const testIcon = document.createElement('i');
+        testIcon.className = 'fas fa-home';
+        testIcon.style.position = 'absolute';
+        testIcon.style.left = '-9999px';
+        document.body.appendChild(testIcon);
+        
+        const computedStyle = window.getComputedStyle(testIcon, ':before');
+        const content = computedStyle.getPropertyValue('content');
+        
+        if (!content || content === 'none' || content === '""') {
+            console.warn('⚠️ Font Awesome no se cargó correctamente, aplicando fallback');
+            // Aplicar fallback para iconos
+            const iconFallbackCSS = `
+                .fas, .fab, .far {
+                    font-family: Arial, sans-serif !important;
+                    font-weight: bold;
+                    display: inline-block;
+                    text-align: center;
+                    min-width: 1em;
+                }
+                .fa-home:before { content: "🏠"; }
+                .fa-envelope:before { content: "✉"; }
+                .fa-phone:before { content: "📞"; }
+                .fa-linkedin-in:before { content: "in"; }
+                .fa-facebook-f:before { content: "f"; }
+                .fa-instagram:before { content: "📷"; }
+                .fa-youtube:before { content: "▶"; }
+                .fa-award:before { content: "🏆"; }
+                .fa-university:before { content: "🏛"; }
+                .fa-project-diagram:before { content: "📊"; }
+                .fa-building:before { content: "🏢"; }
+                .fa-graduation-cap:before { content: "🎓"; }
+                .fa-lightbulb:before { content: "💡"; }
+                .fa-balance-scale:before { content: "⚖"; }
+                .fa-users:before { content: "👥"; }
+                .fa-seedling:before { content: "🌱"; }
+                .fa-quote-left:before { content: """; }
+                .fa-briefcase:before { content: "💼"; }
+                .fa-crown:before { content: "👑"; }
+                .fa-check-circle:before { content: "✓"; }
+                .fa-hammer:before { content: "🔨"; }
+                .fa-drafting-compass:before { content: "📐"; }
+                .fa-tools:before { content: "🛠"; }
+                .fa-check:before { content: "✓"; }
+                .fa-clipboard-list:before { content: "📋"; }
+                .fa-cogs:before { content: "⚙"; }
+                .fa-handshake:before { content: "🤝"; }
+                .fa-clipboard-check:before { content: "📋"; }
+                .fa-key:before { content: "🔑"; }
+                .fa-trophy:before { content: "🏆"; }
+                .fa-medal:before { content: "🥇"; }
+                .fa-leaf:before { content: "🍃"; }
+                .fa-star:before { content: "⭐"; }
+                .fa-heart:before { content: "❤"; }
+                .fa-bullseye:before { content: "🎯"; }
+                .fa-eye:before { content: "👁"; }
+                .fa-shield-alt:before { content: "🛡"; }
+                .fa-rocket:before { content: "🚀"; }
+                .fa-images:before { content: "🖼"; }
+                .fa-copyright:before { content: "©"; }
+            `;
+            
+            const fallbackStyle = document.createElement('style');
+            fallbackStyle.textContent = iconFallbackCSS;
+            document.head.appendChild(fallbackStyle);
+        }
+        
+        document.body.removeChild(testIcon);
+    }, 2000);
 });
