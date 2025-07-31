@@ -1,5 +1,5 @@
 /* ===== ICONOS PERSONALIZADOS PARA LARQ ARQUITECTURA ===== */
-/* Reemplazo de FontAwesome con iconos CSS puros */
+/* Soporte para iconos SVG y FontAwesome */
 
 /* ===== CONFIGURACIÓN BASE ===== */
 [class*="fa-"]:before,
@@ -16,7 +16,220 @@
     vertical-align: middle;
 }
 
-/* ===== ICONOS SOCIALES ===== */
+/* ===== ESTILOS PARA ICONOS SVG ===== */
+.social-links {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #f8f9fa;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.social-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Colores específicos para cada red social */
+.social-link.linkedin:hover {
+    background: #0077b5;
+}
+
+.social-link.facebook:hover {
+    background: #1877f2;
+}
+
+.social-link.instagram:hover {
+    background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
+}
+
+.social-link.youtube:hover {
+    background: #ff0000;
+}
+
+.social-link.email:hover {
+    background: #28a745;
+}
+
+/* Estilos para las imágenes SVG */
+.social-link img {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s ease;
+    filter: brightness(0) saturate(100%) invert(50%);
+}
+
+.social-link:hover img {
+    filter: brightness(0) saturate(100%) invert(100%);
+    transform: scale(1.1);
+}
+
+/* Excepción para el icono de Gmail - mantener colores originales */
+.social-link img[src*="gmail.svg"] {
+    filter: none !important;
+}
+
+.social-link:hover img[src*="gmail.svg"] {
+    filter: none !important;
+    transform: scale(1.1);
+}
+
+/* Excepción para el icono de teléfono - mantener colores originales */
+.social-link img[src*="telefono.svg"] {
+    filter: none !important;
+}
+
+.social-link:hover img[src*="telefono.svg"] {
+    filter: none !important;
+    transform: scale(1.1);
+}
+
+/* ===== ESTILOS PARA ICONOS SVG EN MIEMBROS DEL EQUIPO ===== */
+.member-social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #f8f9fa;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin: 0 5px;
+}
+
+.member-social-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.member-social-link.linkedin:hover {
+    background: #0077b5;
+}
+
+.member-social-link.facebook:hover {
+    background: #1877f2;
+}
+
+.member-social-link.instagram:hover {
+    background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
+}
+
+.member-social-link.youtube:hover {
+    background: #ff0000;
+}
+
+.member-social-link.email:hover {
+    background: #28a745;
+}
+
+.member-social-link img {
+    width: 20px;
+    height: 20px;
+    transition: all 0.3s ease;
+    filter: brightness(0) saturate(100%) invert(50%);
+}
+
+.member-social-link:hover img {
+    filter: brightness(0) saturate(100%) invert(100%);
+    transform: scale(1.1);
+}
+
+/* Excepción para el icono de Gmail en miembros del equipo */
+.member-social-link img[src*="gmail.svg"] {
+    filter: none !important;
+}
+
+.member-social-link:hover img[src*="gmail.svg"] {
+    filter: none !important;
+    transform: scale(1.1);
+}
+
+/* ===== ESTILOS PARA TARJETAS SOCIALES EN CONTACTO ===== */
+.social-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    background: #f8f9fa;
+    text-decoration: none;
+    color: #6c757d;
+    transition: all 0.3s ease;
+    border: 1px solid #e9ecef;
+}
+
+.social-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-decoration: none;
+}
+
+.social-card.linkedin:hover {
+    background: #0077b5;
+    color: white;
+    border-color: #0077b5;
+}
+
+.social-card.facebook:hover {
+    background: #1877f2;
+    color: white;
+    border-color: #1877f2;
+}
+
+.social-card.instagram:hover {
+    background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
+    color: white;
+    border-color: transparent;
+}
+
+.social-card.youtube:hover {
+    background: #ff0000;
+    color: white;
+    border-color: #ff0000;
+}
+
+.social-card img {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s ease;
+    filter: brightness(0) saturate(100%) invert(50%);
+}
+
+.social-card:hover img {
+    filter: brightness(0) saturate(100%) invert(100%);
+    transform: scale(1.05);
+}
+
+/* Excepción para el icono de Gmail en tarjetas sociales */
+.social-card img[src*="gmail.svg"] {
+    filter: none !important;
+}
+
+.social-card:hover img[src*="gmail.svg"] {
+    filter: none !important;
+    transform: scale(1.05);
+}
+
+.social-card span {
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+/* ===== ICONOS SOCIALES FALLBACK (FontAwesome) ===== */
 .fab.fa-linkedin-in:before {
     content: "in";
     background: #0077b5;

@@ -33,15 +33,35 @@
         <nav class="navbar">
             <div class="nav-container">
                 <a href="index.html" class="logo">
-                    <img src="images/Logo_larq.png" alt="Larq Arquitectura y Construcción">
+                    <img src="images/Logo_larq.png" alt="Larq Arquitectura y Construcción" class="logo-image">
+                    <div class="logo-text">
+                        <h2>ARQUITECTURA</h2>
+                        <span> Y CONSTRUCCIÓN</span>
+                    </div>
                 </a>
                 <ul class="nav-menu">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="gente.html">Gente</a></li>
-                    <li><a href="galeria.html">Galería</a></li>
-                    <li><a href="proyectos.html" class="active">Proyectos</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="index.html" class="nav-link">Acerca de</a></li>
+                    <li><a href="galeria.html" class="nav-link active">Proyectos</a></li>
+                    <li><a href="gente.html" class="nav-link">Gente</a></li>
+                    <li><a href="contacto.html" class="nav-link">Contacto</a></li>
                 </ul>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/glenn-landavere-09aba4a/" target="_blank" class="social-link linkedin">
+                        <img src="icons/linkedin.svg" alt="LinkedIn" width="24" height="24">
+                    </a>
+                    <a href="https://www.facebook.com/larqarquitecturayconstruccion/?locale=es_LA" target="_blank" class="social-link facebook">
+                        <img src="icons/facebook.svg" alt="Facebook" width="24" height="24">
+                    </a>
+                    <a href="https://www.instagram.com/larq.arquitectura/?hl=es-la" target="_blank" class="social-link instagram">
+                        <img src="icons/instagram.svg" alt="Instagram" width="24" height="24">
+                    </a>
+                    <a href="https://www.youtube.com/@glennlandavere9719" target="_blank" class="social-link youtube">
+                        <img src="icons/youtube.svg" alt="YouTube" width="24" height="24">
+                    </a>
+                    <a href="mailto:glenn.ladavere@larq.net" class="social-link email">
+                        <img src="icons/gmail.svg" alt="Gmail" width="24" height="24">
+                    </a>
+                </div>
                 <div class="hamburger">
                     <span></span>
                     <span></span>
@@ -49,6 +69,8 @@
                 </div>
             </div>
         </nav>
+        <!-- Overlay para cerrar el menú móvil -->
+        <div class="nav-overlay"></div>
     </header>
 
     <!-- Hero Section -->
