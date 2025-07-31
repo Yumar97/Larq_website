@@ -1,0 +1,127 @@
+/* Font Awesome Fallback CSS - Iconos como texto */
+.fas, .fab, .far {
+    font-family: Arial, sans-serif !important;
+    font-weight: bold !important;
+    font-style: normal !important;
+    display: inline-block !important;
+    text-align: center !important;
+    min-width: 1em !important;
+    line-height: 1 !important;
+}
+
+/* Iconos de navegación y sociales */
+.fa-linkedin-in:before { content: "in" !important; background: #0077b5; color: white; padding: 2px 4px; border-radius: 2px; }
+.fa-facebook-f:before { content: "f" !important; background: #1877f2; color: white; padding: 2px 6px; border-radius: 2px; }
+.fa-instagram:before { content: "📷" !important; }
+.fa-youtube:before { content: "▶" !important; color: #ff0000; }
+.fa-envelope:before { content: "✉" !important; }
+.fa-phone:before { content: "📞" !important; }
+
+/* Iconos de secciones */
+.fa-award:before { content: "🏆" !important; }
+.fa-university:before { content: "🏛" !important; }
+.fa-project-diagram:before { content: "📊" !important; }
+.fa-building:before { content: "🏢" !important; }
+.fa-graduation-cap:before { content: "🎓" !important; }
+.fa-lightbulb:before { content: "💡" !important; }
+.fa-balance-scale:before { content: "⚖" !important; }
+.fa-users:before { content: "👥" !important; }
+.fa-seedling:before { content: "🌱" !important; }
+.fa-quote-left:before { content: """ !important; font-size: 1.5em; color: #7c9df7; }
+
+/* Iconos de experiencia */
+.fa-briefcase:before { content: "💼" !important; }
+.fa-crown:before { content: "👑" !important; }
+.fa-check-circle:before { content: "✓" !important; color: #4ecdc4; font-weight: bold; }
+.fa-hammer:before { content: "🔨" !important; }
+.fa-drafting-compass:before { content: "📐" !important; }
+
+/* Iconos de servicios */
+.fa-tools:before { content: "🛠" !important; }
+.fa-check:before { content: "✓" !important; color: #4ecdc4; font-weight: bold; }
+.fa-clipboard-list:before { content: "📋" !important; }
+
+/* Iconos de proceso */
+.fa-cogs:before { content: "⚙" !important; }
+.fa-handshake:before { content: "🤝" !important; }
+.fa-clipboard-check:before { content: "📋" !important; }
+.fa-key:before { content: "🔑" !important; }
+
+/* Iconos de premios */
+.fa-trophy:before { content: "🏆" !important; }
+.fa-medal:before { content: "🥇" !important; }
+.fa-leaf:before { content: "🍃" !important; }
+.fa-star:before { content: "⭐" !important; }
+
+/* Iconos de valores */
+.fa-heart:before { content: "❤" !important; }
+.fa-bullseye:before { content: "🎯" !important; }
+.fa-eye:before { content: "👁" !important; }
+.fa-shield-alt:before { content: "🛡" !important; }
+
+/* Iconos de CTA */
+.fa-rocket:before { content: "🚀" !important; }
+.fa-images:before { content: "🖼" !important; }
+
+/* Iconos de footer */
+.fa-copyright:before { content: "©" !important; }
+
+/* Iconos del menú hamburguesa - usar CSS puro */
+.hamburger {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-around !important;
+    width: 24px !important;
+    height: 24px !important;
+    cursor: pointer !important;
+}
+
+.hamburger span {
+    display: block !important;
+    height: 3px !important;
+    width: 100% !important;
+    background: #1C2526 !important;
+    border-radius: 2px !important;
+    transition: all 0.3s ease !important;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px) !important;
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0 !important;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px) !important;
+}
+
+/* Asegurar que los iconos se muestren correctamente */
+i[class*="fa-"]:before {
+    font-family: Arial, sans-serif !important;
+    font-weight: bold !important;
+}
+
+/* Estilos específicos para iconos en diferentes contextos */
+.social-link i:before {
+    font-size: 16px !important;
+}
+
+.section-badge i:before {
+    margin-right: 8px !important;
+}
+
+.hero-badge i:before {
+    margin-right: 8px !important;
+}
+
+.floating-badges i:before {
+    font-size: 14px !important;
+}
+
+/* Iconos de testimonios */
+.testimonial-rating i:before {
+    content: "⭐" !important;
+    color: #ffd700 !important;
+}
