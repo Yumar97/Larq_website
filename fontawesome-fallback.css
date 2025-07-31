@@ -66,6 +66,23 @@
 /* Iconos de footer */
 .fa-copyright:before { content: "©" !important; }
 
+/* Iconos adicionales encontrados en todos los archivos */
+.fa-map-marker-alt:before { content: "📍" !important; }
+.fa-calendar:before { content: "📅" !important; }
+.fa-home:before { content: "🏠" !important; }
+.fa-user:before { content: "👤" !important; }
+.fa-industry:before { content: "🏭" !important; }
+.fa-th:before { content: "⊞" !important; }
+.fa-search-plus:before { content: "🔍" !important; }
+.fa-times:before { content: "✕" !important; }
+.fa-chevron-left:before { content: "‹" !important; }
+.fa-chevron-right:before { content: "›" !important; }
+.fa-info-circle:before { content: "ℹ" !important; }
+.fa-external-link-alt:before { content: "↗" !important; }
+.fa-clock:before { content: "🕐" !important; }
+.fa-paper-plane:before { content: "✈" !important; }
+.fa-plus:before { content: "+" !important; }
+
 /* Iconos del menú hamburguesa - usar CSS puro */
 .hamburger {
     display: flex !important;
