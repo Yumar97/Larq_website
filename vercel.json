@@ -1,48 +1,35 @@
 {
   "version": 2,
-  "builds": [
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
     {
-      "src": "**/*",
-      "use": "@vercel/static"
+      "source": "/contacto",
+      "destination": "/contacto.html"
+    },
+    {
+      "source": "/galeria",
+      "destination": "/galeria.html"
+    },
+    {
+      "source": "/gente",
+      "destination": "/gente.html"
+    },
+    {
+      "source": "/proyectos",
+      "destination": "/proyectos.html"
     }
   ],
-  "routes": [
+  "redirects": [
     {
-      "src": "/",
-      "dest": "/index.html"
+      "source": "/inicio",
+      "destination": "/",
+      "permanent": true
     },
     {
-      "src": "/contacto",
-      "dest": "/contacto.html"
-    },
-    {
-      "src": "/galeria",
-      "dest": "/galeria.html"
-    },
-    {
-      "src": "/gente",
-      "dest": "/gente.html"
-    },
-    {
-      "src": "/proyectos",
-      "dest": "/proyectos.html"
-    },
-    {
-      "src": "/styles/(.*)",
-      "dest": "/styles/$1"
-    },
-    {
-      "src": "/images/(.*)",
-      "dest": "/images/$1"
-    },
-    {
-      "src": "/(.*\\.(js|css|png|jpg|jpeg|gif|svg|ico|webp|woff|woff2|ttf|eot))",
-      "dest": "/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html",
-      "status": 404
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
     }
   ],
   "headers": [
@@ -60,11 +47,15 @@
         {
           "key": "X-XSS-Protection",
           "value": "1; mode=block"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
         }
       ]
     },
     {
-      "source": "/sw.js",
+      "source": "/service-worker.js",
       "headers": [
         {
           "key": "Cache-Control",
