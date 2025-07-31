@@ -522,21 +522,84 @@ class ContactForm {
     }
 }
 
-// ===== ANIMACIONES BÁSICAS =====
-class BasicAnimations {
+// ===== SISTEMA DE ANIMACIONES AVANZADO =====
+class AdvancedAnimations {
     constructor() {
+        this.observers = new Map();
+        this.animatedElements = new Set();
         this.init();
     }
 
     init() {
         this.setupScrollAnimations();
+        this.setupSectionAnimations();
+        this.setupNavigationAnimations();
     }
 
     setupScrollAnimations() {
-        const observer = new IntersectionObserver((entries) => {
+        // Observador para elementos que se pueden repetir
+        const repeatableObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
+                    this.animateElement(entry.target);
+                } else {
+                    // Solo resetear si el elemento está completamente fuera del viewport
+                    if (entry.boundingClientRect.bottom < 0 || entry.boundingClientRect.top > window.innerHeight) {
+                        this.resetElement(entry.target);
+                    }
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -100px 0px'
+        });
+
+        // Observador para elementos que se animan solo una vez (como FAQ)
+        const onceOnlyObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !this.animatedElements.has(entry.target)) {
+                    this.animateElement(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        // Elementos que se pueden repetir
+        const repeatableElements = document.querySelectorAll(`
+            .education-card, .service-card-professional, .timeline-item-professional,
+            .process-step, .award-item, .testimonial-item, .value-item,
+            .team-member, .contact-item, .gallery-item, .project-card,
+            .philosophy-principles .principle-item, .specialization-item,
+            .company-item
+        `);
+        
+        // Elementos que se animan solo una vez
+        const onceOnlyElements = document.querySelectorAll(`
+            .faq-item
+        `);
+        
+        repeatableElements.forEach(el => {
+            el.classList.add('scroll-animate', 'repeatable-animate');
+            repeatableObserver.observe(el);
+        });
+
+        onceOnlyElements.forEach(el => {
+            el.classList.add('scroll-animate', 'once-animate');
+            onceOnlyObserver.observe(el);
+        });
+
+        this.observers.set('repeatable', repeatableObserver);
+        this.observers.set('onceOnly', onceOnlyObserver);
+    }
+
+    setupSectionAnimations() {
+        // Observador para secciones completas
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    this.animateSection(entry.target);
                 }
             });
         }, {
@@ -544,14 +607,178 @@ class BasicAnimations {
             rootMargin: '0px 0px -50px 0px'
         });
 
-        const animateElements = document.querySelectorAll(
-            '.project-card, .team-member, .contact-item, .value-item, .service-item, .step'
-        );
-        
-        animateElements.forEach(el => {
-            el.classList.add('scroll-animate');
-            observer.observe(el);
+        // Secciones principales
+        const sections = document.querySelectorAll(`
+            .philosophy-section, .education-section-professional, 
+            .experience-section-professional, .services-section-professional,
+            .process-section-professional, .awards-section, .testimonials-section,
+            .trusted-companies-section, .values-section, .team, .contact,
+            .main-gallery, .location-section, .faq-section
+        `);
+
+        sections.forEach(section => {
+            section.classList.add('section-animate');
+            sectionObserver.observe(section);
         });
+
+        this.observers.set('section', sectionObserver);
+    }
+
+    setupNavigationAnimations() {
+        // Detectar cambios de página/navegación
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                // Si es un enlace interno, resetear animaciones
+                const href = link.getAttribute('href');
+                if (href && href.includes('.html')) {
+                    this.preparePageTransition();
+                }
+            });
+        });
+
+        // Detectar cuando se carga una nueva página
+        window.addEventListener('pageshow', () => {
+            this.resetAllAnimations();
+        });
+
+        // Detectar navegación con botones del navegador
+        window.addEventListener('popstate', () => {
+            setTimeout(() => {
+                this.resetAllAnimations();
+            }, 100);
+        });
+    }
+
+    animateElement(element) {
+        if (this.animatedElements.has(element)) {
+            // Si ya fue animado, resetear primero
+            this.resetElement(element);
+        }
+
+        // Agregar delay escalonado para elementos en la misma sección
+        const delay = this.calculateDelay(element);
+        
+        setTimeout(() => {
+            element.classList.add('animate');
+            this.animatedElements.add(element);
+            
+            // Agregar clase específica según el tipo de elemento
+            this.addSpecificAnimation(element);
+        }, delay);
+    }
+
+    resetElement(element) {
+        element.classList.remove('animate', 'animate-fade-in', 'animate-slide-up', 
+                                 'animate-slide-left', 'animate-slide-right', 
+                                 'animate-scale', 'animate-rotate');
+        this.animatedElements.delete(element);
+    }
+
+    animateSection(section) {
+        section.classList.add('section-visible');
+        
+        // Animar elementos hijos con delay escalonado
+        const children = section.querySelectorAll('.scroll-animate');
+        children.forEach((child, index) => {
+            setTimeout(() => {
+                this.animateElement(child);
+            }, index * 100);
+        });
+    }
+
+    calculateDelay(element) {
+        const section = element.closest('section');
+        if (!section) return 0;
+
+        const siblings = section.querySelectorAll('.scroll-animate');
+        const index = Array.from(siblings).indexOf(element);
+        
+        return Math.min(index * 150, 1000); // Máximo 1 segundo de delay
+    }
+
+    addSpecificAnimation(element) {
+        // Animaciones específicas según el tipo de elemento
+        if (element.classList.contains('education-card')) {
+            element.classList.add('animate-slide-up');
+        } else if (element.classList.contains('timeline-item-professional')) {
+            element.classList.add('animate-slide-left');
+        } else if (element.classList.contains('service-card-professional')) {
+            element.classList.add('animate-scale');
+        } else if (element.classList.contains('company-item')) {
+            element.classList.add('animate-fade-in');
+        } else if (element.classList.contains('testimonial-item')) {
+            element.classList.add('animate-slide-right');
+        } else {
+            element.classList.add('animate-slide-up');
+        }
+    }
+
+    resetAllAnimations() {
+        // Resetear todos los elementos animados
+        this.animatedElements.forEach(element => {
+            this.resetElement(element);
+        });
+
+        // Resetear secciones
+        document.querySelectorAll('.section-animate').forEach(section => {
+            section.classList.remove('section-visible');
+        });
+
+        // Forzar re-observación
+        setTimeout(() => {
+            this.reobserveElements();
+        }, 100);
+    }
+
+    reobserveElements() {
+        // Re-observar todos los elementos
+        this.observers.forEach(observer => {
+            observer.disconnect();
+        });
+
+        // Limpiar el set de elementos animados solo para elementos repetibles
+        const onceOnlyElements = document.querySelectorAll('.once-animate');
+        onceOnlyElements.forEach(element => {
+            // No remover elementos FAQ del set para que mantengan su estado
+            if (!element.classList.contains('faq-item')) {
+                this.animatedElements.delete(element);
+            }
+        });
+
+        // Reinicializar observadores
+        this.setupScrollAnimations();
+        this.setupSectionAnimations();
+    }
+
+    preparePageTransition() {
+        // Preparar transición de página
+        document.body.classList.add('page-transitioning');
+        
+        setTimeout(() => {
+            document.body.classList.remove('page-transitioning');
+        }, 500);
+    }
+
+    // Método público para triggear animaciones manualmente
+    triggerAnimation(selector) {
+        const elements = document.querySelectorAll(selector);
+        elements.forEach(element => {
+            this.resetElement(element);
+            setTimeout(() => {
+                this.animateElement(element);
+            }, 50);
+        });
+    }
+
+    // Método para pausar/reanudar animaciones
+    pauseAnimations() {
+        this.observers.forEach(observer => observer.disconnect());
+    }
+
+    resumeAnimations() {
+        this.setupScrollAnimations();
+        this.setupSectionAnimations();
     }
 }
 
@@ -767,15 +994,16 @@ document.addEventListener('DOMContentLoaded', () => {
     new DynamicHeader();
     new SimpleGallery();
     new ContactForm();
-    new BasicAnimations();
+    new AdvancedAnimations();
 
-    // Agregar estilos básicos para animaciones
+    // Agregar estilos avanzados para animaciones
     const styles = document.createElement('style');
     styles.textContent = `
+        /* Estilos base para animaciones */
         .scroll-animate {
             opacity: 0;
             transform: translateY(30px);
-            transition: all 0.6s ease;
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
         
         .scroll-animate.animate {
@@ -783,6 +1011,131 @@ document.addEventListener('DOMContentLoaded', () => {
             transform: translateY(0);
         }
         
+        /* Animaciones específicas */
+        .scroll-animate.animate-fade-in {
+            animation: fadeInAnimation 0.8s ease-out forwards;
+        }
+        
+        .scroll-animate.animate-slide-up {
+            animation: slideUpAnimation 0.8s ease-out forwards;
+        }
+        
+        .scroll-animate.animate-slide-left {
+            animation: slideLeftAnimation 0.8s ease-out forwards;
+        }
+        
+        .scroll-animate.animate-slide-right {
+            animation: slideRightAnimation 0.8s ease-out forwards;
+        }
+        
+        .scroll-animate.animate-scale {
+            animation: scaleAnimation 0.8s ease-out forwards;
+        }
+        
+        .scroll-animate.animate-rotate {
+            animation: rotateAnimation 0.8s ease-out forwards;
+        }
+        
+        /* Keyframes para animaciones */
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes slideUpAnimation {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideLeftAnimation {
+            0% {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideRightAnimation {
+            0% {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes scaleAnimation {
+            0% {
+                opacity: 0;
+                transform: scale(0.8) rotate(-5deg);
+            }
+            50% {
+                transform: scale(1.05) rotate(2deg);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+        
+        @keyframes rotateAnimation {
+            0% {
+                opacity: 0;
+                transform: rotate(-10deg) scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: rotate(0deg) scale(1);
+            }
+        }
+        
+        /* Animaciones para secciones */
+        .section-animate {
+            transition: all 0.6s ease;
+        }
+        
+        .section-animate.section-visible {
+            animation: sectionReveal 0.8s ease-out forwards;
+        }
+        
+        @keyframes sectionReveal {
+            0% {
+                opacity: 0.8;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Transiciones de página */
+        .page-transitioning {
+            transition: opacity 0.3s ease;
+        }
+        
+        .page-transitioning * {
+            pointer-events: none;
+        }
+        
+        /* Estilos para elementos interactivos */
         .project-card {
             transition: all 0.3s ease;
             cursor: pointer;
@@ -801,11 +1154,93 @@ document.addEventListener('DOMContentLoaded', () => {
             outline-offset: 2px;
         }
         
+        /* Efectos especiales para elementos específicos */
+        .education-card.animate {
+            animation: educationCardReveal 1s ease-out forwards;
+        }
+        
+        @keyframes educationCardReveal {
+            0% {
+                opacity: 0;
+                transform: translateY(30px) rotateX(15deg);
+            }
+            50% {
+                transform: translateY(-5px) rotateX(-2deg);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) rotateX(0deg);
+            }
+        }
+        
+        .timeline-item-professional.animate {
+            animation: timelineItemReveal 1s ease-out forwards;
+        }
+        
+        @keyframes timelineItemReveal {
+            0% {
+                opacity: 0;
+                transform: translateX(-40px) scale(0.9);
+            }
+            60% {
+                transform: translateX(5px) scale(1.02);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0) scale(1);
+            }
+        }
+        
+        .service-card-professional.animate {
+            animation: serviceCardReveal 1s ease-out forwards;
+        }
+        
+        @keyframes serviceCardReveal {
+            0% {
+                opacity: 0;
+                transform: scale(0.8) rotate(-3deg);
+            }
+            50% {
+                transform: scale(1.05) rotate(1deg);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+        
+        .company-item.animate {
+            animation: companyItemReveal 0.8s ease-out forwards;
+        }
+        
+        @keyframes companyItemReveal {
+            0% {
+                opacity: 0;
+                transform: scale(0.9);
+                filter: blur(2px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+                filter: blur(0px);
+            }
+        }
+        
+        /* Reducir movimiento para usuarios que lo prefieren */
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after {
                 animation-duration: 0.01ms !important;
                 animation-iteration-count: 1 !important;
                 transition-duration: 0.01ms !important;
+            }
+            
+            .scroll-animate {
+                transform: none !important;
+            }
+            
+            .scroll-animate.animate {
+                opacity: 1 !important;
+                transform: none !important;
             }
         }
         
@@ -820,12 +1255,71 @@ document.addEventListener('DOMContentLoaded', () => {
             border-radius: 12px;
             z-index: 10000;
             box-shadow: 0 8px 32px rgba(76, 175, 80, 0.3);
-            animation: slideIn 0.3s ease;
+            animation: slideInNotification 0.3s ease;
         }
         
-        @keyframes slideIn {
-            from { transform: translateX(100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
+        @keyframes slideInNotification {
+            from { 
+                transform: translateX(100%); 
+                opacity: 0; 
+            }
+            to { 
+                transform: translateX(0); 
+                opacity: 1; 
+            }
+        }
+        
+        /* Mejoras visuales adicionales */
+        .scroll-animate:not(.animate) {
+            will-change: transform, opacity;
+        }
+        
+        .scroll-animate.animate {
+            will-change: auto;
+        }
+        
+        /* Efectos de entrada escalonados mejorados */
+        .scroll-animate:nth-child(1) { transition-delay: 0ms; }
+        .scroll-animate:nth-child(2) { transition-delay: 100ms; }
+        .scroll-animate:nth-child(3) { transition-delay: 200ms; }
+        .scroll-animate:nth-child(4) { transition-delay: 300ms; }
+        .scroll-animate:nth-child(5) { transition-delay: 400ms; }
+        .scroll-animate:nth-child(6) { transition-delay: 500ms; }
+        
+        /* Estilos específicos para FAQ - animación única */
+        .faq-item.once-animate {
+            transition: all 0.6s ease !important;
+        }
+        
+        .faq-item.once-animate.animate {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+        
+        /* Desactivar animaciones problemáticas en FAQ */
+        .faq-item.animate {
+            animation: none !important;
+        }
+        
+        /* Evitar conflictos con animaciones CSS existentes */
+        .faq-item {
+            animation-play-state: paused !important;
+        }
+        
+        .faq-item.animate {
+            animation-play-state: running !important;
+            animation: faqItemReveal 0.6s ease-out forwards !important;
+        }
+        
+        @keyframes faqItemReveal {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     `;
     document.head.appendChild(styles);
