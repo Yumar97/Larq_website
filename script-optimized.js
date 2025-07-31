@@ -45,12 +45,21 @@ class MobileNavigation {
     constructor() {
         this.hamburger = document.querySelector('.hamburger');
         this.navMenu = document.querySelector('.nav-menu');
+        this.overlay = document.querySelector('.nav-overlay');
+        this.socialLinks = document.querySelector('.social-links');
         this.init();
     }
 
     init() {
         if (!this.hamburger || !this.navMenu) return;
 
+        // Agregar atributos de accesibilidad
+        this.hamburger.setAttribute('aria-label', 'Abrir menú de navegación');
+        this.hamburger.setAttribute('aria-expanded', 'false');
+        this.hamburger.setAttribute('aria-controls', 'nav-menu');
+        this.navMenu.setAttribute('id', 'nav-menu');
+
+        // Event listeners
         this.hamburger.addEventListener('click', () => this.toggle());
         this.hamburger.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
@@ -64,29 +73,80 @@ class MobileNavigation {
             link.addEventListener('click', () => this.close());
         });
 
-        // Cerrar menú al hacer clic fuera
-        document.addEventListener('click', (e) => {
-            if (!this.hamburger.contains(e.target) && !this.navMenu.contains(e.target)) {
+        // Cerrar menú al hacer clic en el overlay
+        if (this.overlay) {
+            this.overlay.addEventListener('click', () => this.close());
+        }
+
+        // Cerrar menú con tecla Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && this.isOpen()) {
                 this.close();
             }
         });
+
+        // Manejar cambios de tamaño de ventana
+        window.addEventListener('resize', Utils.debounce(() => {
+            if (window.innerWidth > 768 && this.isOpen()) {
+                this.close();
+            }
+        }, 250));
     }
 
     toggle() {
-        const isOpen = this.hamburger.classList.contains('active');
-        this.hamburger.classList.toggle('active');
-        this.navMenu.classList.toggle('active');
-        document.body.classList.toggle('nav-open');
+        const isOpen = this.isOpen();
+        
+        if (isOpen) {
+            this.close();
+        } else {
+            this.open();
+        }
+    }
+
+    open() {
+        this.hamburger.classList.add('active');
+        this.navMenu.classList.add('active');
+        document.body.classList.add('nav-open');
+        
+        if (this.overlay) {
+            this.overlay.classList.add('active');
+        }
+
+        if (this.socialLinks) {
+            this.socialLinks.classList.add('mobile-visible');
+        }
         
         // Actualizar aria-expanded para accesibilidad
-        this.hamburger.setAttribute('aria-expanded', !isOpen);
+        this.hamburger.setAttribute('aria-expanded', 'true');
+        this.hamburger.setAttribute('aria-label', 'Cerrar menú de navegación');
+
+        // Focus en el primer enlace del menú para accesibilidad
+        const firstLink = this.navMenu.querySelector('.nav-link');
+        if (firstLink) {
+            setTimeout(() => firstLink.focus(), 300);
+        }
     }
 
     close() {
         this.hamburger.classList.remove('active');
         this.navMenu.classList.remove('active');
         document.body.classList.remove('nav-open');
+        
+        if (this.overlay) {
+            this.overlay.classList.remove('active');
+        }
+
+        if (this.socialLinks) {
+            this.socialLinks.classList.remove('mobile-visible');
+        }
+        
+        // Actualizar aria-expanded para accesibilidad
         this.hamburger.setAttribute('aria-expanded', 'false');
+        this.hamburger.setAttribute('aria-label', 'Abrir menú de navegación');
+    }
+
+    isOpen() {
+        return this.hamburger.classList.contains('active');
     }
 }
 
