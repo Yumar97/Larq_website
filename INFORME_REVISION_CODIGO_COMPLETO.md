@@ -49,7 +49,7 @@
 ### 🎨 ARCHIVOS CSS (6 archivos)
 ```
 ✅ styles/index.css     - Estilos principales
-✅ styles/galeria.css   - Estilos de galería
+✅ styles/proyectos.css - Estilos de proyectos
 ✅ styles/gente.css     - Estilos de equipo
 ✅ styles/contacto.css  - Estilos de contacto
 ✅ styles/iconos.css    - Iconos personalizados

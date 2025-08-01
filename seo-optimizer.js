@@ -75,7 +75,7 @@ class SEOOptimizer {
                 description: 'Conoce la trayectoria profesional de Glenn Landavere, arquitecto con formación en UNI y experiencia en proyectos de gran envergadura. Especialista en BIM y construcción sostenible.',
                 keywords: 'Glenn Landavere arquitecto, formación arquitecto, experiencia profesional, UNI arquitectura, BIM certificado, Bovis Lend Lease'
             },
-            '/galeria.html': {
+            '/proyectos.html': {
                 title: 'Proyectos de Arquitectura - Portfolio | Larq Arquitectura y Construcción',
                 description: 'Descubre nuestro portfolio de proyectos arquitectónicos: Hotel Tambo del Inka, Edificio Palomas, proyectos residenciales y comerciales en Lima y Cusco.',
                 keywords: 'proyectos arquitectura Lima, Hotel Tambo del Inka, Edificio Palomas, portfolio arquitecto, proyectos residenciales, arquitectura comercial'

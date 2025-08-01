@@ -258,19 +258,238 @@ h3.titulo-tahoma {
 .logo-text h2 {
     font-size: var(--font-size-xl);
     font-weight: 800;
-    color: var(--primary-900);
+    color: #1C2526 !important;
     letter-spacing: -0.025em;
     line-height: 1;
+    -webkit-text-fill-color: #1C2526 !important;
+    -moz-text-fill-color: #1C2526 !important;
+    text-fill-color: #1C2526 !important;
+    /* Asegurar compatibilidad con todos los navegadores */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* Prevenir cambios de color por herencia */
+    text-decoration-color: #1C2526 !important;
+    caret-color: #1C2526 !important;
+    /* Forzar color en estados específicos */
+    outline-color: #1C2526 !important;
+    /* Reglas específicas para Microsoft Edge */
+    -ms-text-fill-color: #1C2526 !important;
+    /* Forzar color con especificidad máxima */
+    background-color: transparent !important;
+    text-shadow: none !important;
+    /* Prevenir cualquier filtro o efecto */
+    filter: none !important;
+    -webkit-filter: none !important;
+    /* Asegurar que no herede colores de elementos padre */
+    inherit: none !important;
 }
 
 .logo-text span {
     font-size: var(--font-size-xs);
-    color: var(--primary-500);
+    color: #1C2526 !important;
     font-weight: 500;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     margin-top: var(--space-1);
     text-decoration: none;
+    -webkit-text-fill-color: #1C2526 !important;
+    -moz-text-fill-color: #1C2526 !important;
+    text-fill-color: #1C2526 !important;
+    /* Asegurar compatibilidad con todos los navegadores */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* Prevenir cambios de color por herencia */
+    text-decoration-color: #1C2526 !important;
+    caret-color: #1C2526 !important;
+    /* Forzar color en estados específicos */
+    outline-color: #1C2526 !important;
+}
+
+/* Reglas específicas para diferentes estados y navegadores */
+.logo-text h2:link,
+.logo-text h2:visited,
+.logo-text h2:hover,
+.logo-text h2:active,
+.logo-text h2:focus {
+    color: #1C2526 !important;
+    -webkit-text-fill-color: #1C2526 !important;
+    -moz-text-fill-color: #1C2526 !important;
+    text-fill-color: #1C2526 !important;
+}
+
+.logo-text span:link,
+.logo-text span:visited,
+.logo-text span:hover,
+.logo-text span:active,
+.logo-text span:focus {
+    color: #1C2526 !important;
+    -webkit-text-fill-color: #1C2526 !important;
+    -moz-text-fill-color: #1C2526 !important;
+    text-fill-color: #1C2526 !important;
+}
+
+/* Reglas específicas para el elemento padre (logo) */
+.logo:link .logo-text h2,
+.logo:visited .logo-text h2,
+.logo:hover .logo-text h2,
+.logo:active .logo-text h2,
+.logo:focus .logo-text h2 {
+    color: #1C2526 !important;
+    -webkit-text-fill-color: #1C2526 !important;
+    -moz-text-fill-color: #1C2526 !important;
+    text-fill-color: #1C2526 !important;
+}
+
+.logo:link .logo-text span,
+.logo:visited .logo-text span,
+.logo:hover .logo-text span,
+.logo:active .logo-text span,
+.logo:focus .logo-text span {
+    color: #1C2526 !important;
+    -webkit-text-fill-color: #1C2526 !important;
+    -moz-text-fill-color: #1C2526 !important;
+    text-fill-color: #1C2526 !important;
+}
+
+/* Reglas específicas para navegadores WebKit (Chrome, Safari, Edge) */
+@supports (-webkit-appearance: none) {
+    .logo-text h2,
+    .logo-text span {
+        color: #1C2526 !important;
+        -webkit-text-fill-color: #1C2526 !important;
+    }
+}
+
+/* Reglas específicas para navegadores Gecko (Firefox) */
+@supports (-moz-appearance: none) {
+    .logo-text h2,
+    .logo-text span {
+        color: #1C2526 !important;
+        -moz-text-fill-color: #1C2526 !important;
+    }
+}
+
+/* Reglas específicas para navegadores que soportan text-fill-color */
+@supports (text-fill-color: #1C2526) {
+    .logo-text h2,
+    .logo-text span {
+        color: #1C2526 !important;
+        text-fill-color: #1C2526 !important;
+    }
+}
+
+/* ===== REGLAS ESPECÍFICAS PARA MICROSOFT EDGE Y COMPATIBILIDAD UNIVERSAL ===== */
+/* Forzar color oscuro para el texto ARQUITECTURA en todos los navegadores */
+.logo-text h2,
+.logo-text span {
+    /* Forzar color con máxima especificidad */
+    color: #1C2526 !important;
+    /* Propiedades específicas para diferentes motores de navegador */
+    -webkit-text-fill-color: #1C2526 !important;
+    -moz-text-fill-color: #1C2526 !important;
+    -ms-text-fill-color: #1C2526 !important;
+    text-fill-color: #1C2526 !important;
+    /* Prevenir herencia de colores */
+    background-color: transparent !important;
+    background-image: none !important;
+    background: transparent !important;
+    /* Eliminar cualquier efecto de texto */
+    text-shadow: none !important;
+    text-decoration: none !important;
+    /* Forzar propiedades de renderizado */
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-rendering: optimizeLegibility !important;
+    /* Prevenir filtros */
+    filter: none !important;
+    -webkit-filter: none !important;
+    -ms-filter: none !important;
+    /* Asegurar opacidad completa */
+    opacity: 1 !important;
+    /* Prevenir transformaciones de color */
+    -webkit-text-stroke: none !important;
+    -webkit-text-stroke-color: transparent !important;
+    -webkit-text-stroke-width: 0 !important;
+}
+
+/* Reglas específicas para estados de enlace */
+a .logo-text h2,
+a .logo-text span,
+.logo .logo-text h2,
+.logo .logo-text span {
+    color: #1C2526 !important;
+    -webkit-text-fill-color: #1C2526 !important;
+    -moz-text-fill-color: #1C2526 !important;
+    -ms-text-fill-color: #1C2526 !important;
+    text-fill-color: #1C2526 !important;
+}
+
+/* Estados específicos de enlace */
+a:link .logo-text h2,
+a:visited .logo-text h2,
+a:hover .logo-text h2,
+a:active .logo-text h2,
+a:focus .logo-text h2,
+a:link .logo-text span,
+a:visited .logo-text span,
+a:hover .logo-text span,
+a:active .logo-text span,
+a:focus .logo-text span {
+    color: #1C2526 !important;
+    -webkit-text-fill-color: #1C2526 !important;
+    -moz-text-fill-color: #1C2526 !important;
+    -ms-text-fill-color: #1C2526 !important;
+    text-fill-color: #1C2526 !important;
+}
+
+/* Reglas específicas para Microsoft Edge (EdgeHTML y Chromium) */
+@supports (-ms-ime-align: auto) {
+    .logo-text h2,
+    .logo-text span {
+        color: #1C2526 !important;
+        -ms-text-fill-color: #1C2526 !important;
+    }
+}
+
+/* Reglas para Edge basado en Chromium */
+@supports (-webkit-appearance: none) and (not (-moz-appearance: none)) {
+    .logo-text h2,
+    .logo-text span {
+        color: #1C2526 !important;
+        -webkit-text-fill-color: #1C2526 !important;
+    }
+}
+
+/* Media query específica para Edge */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .logo-text h2,
+    .logo-text span {
+        color: #1C2526 !important;
+        -ms-text-fill-color: #1C2526 !important;
+    }
+}
+
+/* Regla de respaldo universal */
+* .logo-text h2,
+* .logo-text span {
+    color: #1C2526 !important;
+}
+
+/* Reglas específicas para el contenedor del logo */
+.logo,
+.logo * {
+    color: inherit !important;
+}
+
+.logo .logo-text h2,
+.logo .logo-text span {
+    color: #1C2526 !important;
+    -webkit-text-fill-color: #1C2526 !important;
+    -moz-text-fill-color: #1C2526 !important;
+    -ms-text-fill-color: #1C2526 !important;
+    text-fill-color: #1C2526 !important;
 }
 
 .nav-menu {

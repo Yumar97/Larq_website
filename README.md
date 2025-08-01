@@ -48,12 +48,12 @@ vercel dev
 larq-web/
 ├── index.html          # Página principal
 ├── contacto.html       # Página de contacto
-├── galeria.html        # Galería de proyectos
+├── proyectos.html      # Galería de proyectos
 ├── gente.html          # Equipo de trabajo
 ├── styles/             # Archivos CSS
 │   ├── index.css
 │   ├── contacto.css
-│   ├── galeria.css
+│   ├── proyectos.css
 │   └── gente.css
 ├── images/             # Imágenes del sitio
 ├── scripts/            # Archivos JavaScript

@@ -11,7 +11,7 @@
     },
     {
       "source": "/galeria",
-      "destination": "/galeria.html"
+      "destination": "/proyectos.html"
     },
     {
       "source": "/gente",
@@ -19,7 +19,7 @@
     },
     {
       "source": "/proyectos",
-      "destination": "/galeria.html"
+      "destination": "/proyectos.html"
     }
   ],
   "redirects": [
