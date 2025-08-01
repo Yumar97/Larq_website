@@ -543,8 +543,8 @@
 
 /* ===== ICONOS DE CITAS Y TESTIMONIOS ===== */
 .fas.fa-quote-left:before {
-    content: """;
-    font-size: 1.5em;
+    content: """
+    font-size 1.5em;
     font-weight: bold;
     color: #6c757d;
 }
