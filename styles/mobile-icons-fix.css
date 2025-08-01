@@ -3,19 +3,22 @@
 
 /* Forzar visibilidad en TODOS los dispositivos móviles */
 @media screen and (max-width: 768px) {
-    /* FORZAR MOSTRAR ICONOS SOCIALES SIEMPRE EN MÓVIL */
+    /* FORZAR MOSTRAR ICONOS SOCIALES SIEMPRE EN MÓVIL - LÍNEA HORIZONTAL */
     .social-links {
         display: flex !important;
+        flex-direction: row !important;
         visibility: visible !important;
         opacity: 1 !important;
         position: relative !important;
         order: 2 !important;
         gap: 0.3rem !important;
         justify-content: flex-end !important;
+        align-items: center !important;
         flex-shrink: 0 !important;
         margin-left: auto !important;
         margin-right: 0.5rem !important;
         z-index: 1000 !important;
+        flex-wrap: nowrap !important;
     }
     
     /* FORZAR VISIBILIDAD DE CADA ICONO INDIVIDUAL */
@@ -70,7 +73,7 @@
         max-width: calc(100% - 100px) !important;
     }
     
-    /* HAMBURGER SIEMPRE VISIBLE */
+    /* HAMBURGER SIEMPRE VISIBLE Y FUNCIONAL */
     .hamburger {
         order: 3 !important;
         display: flex !important;
@@ -90,9 +93,75 @@
         margin-left: 0.5rem !important;
     }
     
-    /* ASEGURAR QUE EL MENÚ DE NAVEGACIÓN ESTÉ OCULTO EN MÓVIL */
+    /* ASEGURAR QUE EL MENÚ DE NAVEGACIÓN ESTÉ OCULTO EN MÓVIL PERO FUNCIONAL */
     .nav-menu {
         display: none !important;
+        position: fixed !important;
+        top: 0 !important;
+        right: -100% !important;
+        width: 280px !important;
+        height: 100vh !important;
+        background: rgba(255, 255, 255, 0.95) !important;
+        backdrop-filter: blur(20px) !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+        padding: 80px 2rem 2rem !important;
+        transition: right 0.3s ease !important;
+        z-index: 1000 !important;
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    /* CUANDO EL MENÚ ESTÁ ACTIVO */
+    .nav-menu.active {
+        display: flex !important;
+        right: 0 !important;
+    }
+    
+    /* ESTILOS PARA LOS ENLACES DEL MENÚ MÓVIL */
+    .nav-menu li {
+        width: 100% !important;
+        margin: 0.5rem 0 !important;
+    }
+    
+    .nav-menu .nav-link {
+        display: block !important;
+        width: 100% !important;
+        padding: 1rem 0 !important;
+        font-size: 1.1rem !important;
+        font-weight: 500 !important;
+        color: var(--primary-700, #384142) !important;
+        text-decoration: none !important;
+        border-bottom: 1px solid rgba(163, 191, 250, 0.2) !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    .nav-menu .nav-link:hover,
+    .nav-menu .nav-link.active {
+        color: var(--accent-600, #7c9df7) !important;
+        background: rgba(163, 191, 250, 0.1) !important;
+        padding-left: 1rem !important;
+        border-radius: 8px !important;
+    }
+    
+    /* OVERLAY PARA CERRAR EL MENÚ */
+    .nav-overlay {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: rgba(0, 0, 0, 0.5) !important;
+        backdrop-filter: blur(5px) !important;
+        z-index: 999 !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    .nav-overlay.active {
+        opacity: 1 !important;
+        visibility: visible !important;
     }
     
     /* EFECTOS HOVER PARA ICONOS */
@@ -177,6 +246,11 @@
         width: 32px !important;
         height: 32px !important;
     }
+    
+    .nav-menu {
+        width: 260px !important;
+        padding: 70px 1.5rem 1.5rem !important;
+    }
 }
 
 /* ESPECÍFICO PARA MÓVILES EXTRA PEQUEÑOS */
@@ -226,12 +300,18 @@
         width: 28px !important;
         height: 28px !important;
     }
+    
+    .nav-menu {
+        width: 240px !important;
+        padding: 60px 1rem 1rem !important;
+    }
 }
 
 /* FORZAR EN ORIENTACIÓN PORTRAIT (VERTICAL) */
 @media screen and (max-width: 768px) and (orientation: portrait) {
     .social-links {
         display: flex !important;
+        flex-direction: row !important;
         visibility: visible !important;
         opacity: 1 !important;
     }
@@ -247,6 +327,7 @@
 @media screen and (max-width: 768px) and (orientation: landscape) {
     .social-links {
         display: flex !important;
+        flex-direction: row !important;
         visibility: visible !important;
         opacity: 1 !important;
     }
@@ -268,6 +349,10 @@
         opacity: 1 !important;
         pointer-events: auto !important;
     }
+    
+    .social-links {
+        flex-direction: row !important;
+    }
 }
 
 /* ASEGURAR QUE EN DESKTOP SE MANTENGA EL DISEÑO ORIGINAL */
@@ -277,6 +362,7 @@
         margin-left: initial !important;
         margin-right: initial !important;
         gap: var(--space-3, 0.75rem) !important;
+        flex-direction: row !important;
     }
     
     .social-link {
@@ -296,9 +382,21 @@
     
     .nav-menu {
         display: flex !important;
+        position: static !important;
+        width: auto !important;
+        height: auto !important;
+        background: transparent !important;
+        backdrop-filter: none !important;
+        flex-direction: row !important;
+        padding: 0 !important;
+        box-shadow: none !important;
     }
     
     .hamburger {
+        display: none !important;
+    }
+    
+    .nav-overlay {
         display: none !important;
     }
 }
