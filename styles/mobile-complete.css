@@ -1,9 +1,79 @@
 /* ===== DISEÑO MÓVIL COMPLETO Y CONSOLIDADO ===== */
 /* Archivo único que contiene todas las correcciones móviles */
 
-/* ===== ICONOS SOCIALES Y NAVEGACIÓN MÓVIL ===== */
+/* ===== HEADER MÓVIL MEJORADO (MODELO PROYECTOS) ===== */
 @media screen and (max-width: 768px) {
-    /* FORZAR MOSTRAR ICONOS SOCIALES SIEMPRE EN MÓVIL - LÍNEA HORIZONTAL */
+    /* HEADER FIJO Y OPTIMIZADO */
+    .header {
+        position: fixed !important;
+        top: 0 !important;
+        width: 100% !important;
+        background: rgba(255, 255, 255, 0.98) !important;
+        backdrop-filter: blur(20px) saturate(180%) !important;
+        border-bottom: 1px solid rgba(163, 191, 250, 0.2) !important;
+        z-index: 1050 !important;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1) !important;
+        transition: all 0.3s ease !important;
+    }
+
+    /* CONTENEDOR DE NAVEGACIÓN OPTIMIZADO */
+    .nav-container {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 0.75rem 1rem !important;
+        gap: 0.5rem !important;
+        position: relative !important;
+        width: 100% !important;
+        flex-wrap: nowrap !important;
+        height: 70px !important;
+    }
+    
+    /* LOGO OPTIMIZADO */
+    .logo {
+        order: 1 !important;
+        flex-shrink: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 0.75rem !important;
+        flex: 1 !important;
+        max-width: calc(100% - 140px) !important;
+        text-decoration: none !important;
+    }
+    
+    .logo-image {
+        width: 40px !important;
+        height: 40px !important;
+        flex-shrink: 0 !important;
+        border-radius: 8px !important;
+    }
+    
+    .logo-text {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        white-space: nowrap !important;
+    }
+    
+    .logo-text h2 {
+        font-size: 0.95rem !important;
+        line-height: 1 !important;
+        margin: 0 !important;
+        color: #1C2526 !important;
+        font-weight: 800 !important;
+        letter-spacing: -0.5px !important;
+    }
+    
+    .logo-text span {
+        font-size: 0.65rem !important;
+        margin-top: 2px !important;
+        color: #1C2526 !important;
+        font-weight: 500 !important;
+        letter-spacing: 0.5px !important;
+        text-transform: uppercase !important;
+    }
+
+    /* ICONOS SOCIALES HORIZONTALES AL LADO DEL LOGO */
     .social-links {
         display: flex !important;
         flex-direction: row !important;
@@ -11,7 +81,7 @@
         opacity: 1 !important;
         position: relative !important;
         order: 2 !important;
-        gap: 0.3rem !important;
+        gap: 0.4rem !important;
         justify-content: flex-end !important;
         align-items: center !important;
         flex-shrink: 0 !important;
@@ -21,136 +91,125 @@
         flex-wrap: nowrap !important;
     }
     
-    /* FORZAR VISIBILIDAD DE CADA ICONO INDIVIDUAL */
     .social-link {
         display: flex !important;
         visibility: visible !important;
         opacity: 1 !important;
-        width: 28px !important;
-        height: 28px !important;
-        font-size: 0.75rem !important;
-        border-radius: 6px !important;
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 0.8rem !important;
+        border-radius: 8px !important;
         background: rgba(163, 191, 250, 0.15) !important;
         border: 1px solid rgba(163, 191, 250, 0.3) !important;
         transition: all 0.3s ease !important;
         align-items: center !important;
         justify-content: center !important;
         flex-shrink: 0 !important;
-        min-width: 28px !important;
-        min-height: 28px !important;
+        min-width: 32px !important;
+        min-height: 32px !important;
+        text-decoration: none !important;
     }
     
-    /* FORZAR VISIBILIDAD DE IMÁGENES DENTRO DE LOS ICONOS */
     .social-link img {
         display: block !important;
         visibility: visible !important;
         opacity: 1 !important;
-        width: 16px !important;
-        height: 16px !important;
+        width: 18px !important;
+        height: 18px !important;
         object-fit: contain !important;
     }
     
-    /* REORGANIZAR HEADER MÓVIL COMPLETAMENTE */
-    .nav-container {
-        display: flex !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        padding: 0 1rem !important;
-        gap: 0.5rem !important;
-        position: relative !important;
-        width: 100% !important;
-        flex-wrap: nowrap !important;
+    .social-link:hover {
+        background: var(--accent-600, #7c9df7) !important;
+        color: white !important;
+        transform: translateY(-1px) !important;
+        box-shadow: 0 4px 12px rgba(163, 191, 250, 0.4) !important;
+        border-color: var(--accent-600, #7c9df7) !important;
     }
-    
-    /* LOGO CON ICONOS INTEGRADOS */
-    .logo {
-        order: 1 !important;
-        flex-shrink: 0 !important;
-        display: flex !important;
-        align-items: center !important;
-        gap: 1rem !important;
-        flex: 1 !important;
-        max-width: calc(100% - 100px) !important;
-    }
-    
-    /* HAMBURGER SIEMPRE VISIBLE Y FUNCIONAL */
+
+    /* HAMBURGER MEJORADO */
     .hamburger {
         order: 3 !important;
         display: flex !important;
         flex-direction: column !important;
         justify-content: center !important;
         align-items: center !important;
-        width: 40px !important;
-        height: 40px !important;
-        padding: 6px !important;
+        width: 44px !important;
+        height: 44px !important;
+        padding: 8px !important;
         cursor: pointer !important;
         z-index: 1001 !important;
         flex-shrink: 0 !important;
-        background: transparent !important;
-        border: none !important;
-        border-radius: 8px !important;
+        background: rgba(163, 191, 250, 0.1) !important;
+        border: 1px solid rgba(163, 191, 250, 0.2) !important;
+        border-radius: 10px !important;
         transition: all 0.3s ease !important;
         margin-left: 0.5rem !important;
     }
     
-    /* ESTILOS PARA LAS LÍNEAS DEL HAMBURGER */
     .hamburger span {
-        width: 24px;
-        height: 2px;
-        background: var(--primary-700, #384142);
-        margin: 2px 0;
-        transition: all 0.3s ease;
-        border-radius: 1px;
-        transform-origin: center;
+        width: 24px !important;
+        height: 2px !important;
+        background: var(--primary-700, #384142) !important;
+        margin: 2px 0 !important;
+        transition: all 0.3s ease !important;
+        border-radius: 1px !important;
+        transform-origin: center !important;
     }
     
-    /* ANIMACIÓN DEL HAMBURGER CUANDO ESTÁ ACTIVO */
-    .hamburger.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-        background: var(--accent-600, #7c9df7);
-    }
-    
-    .hamburger.active span:nth-child(2) {
-        opacity: 0;
-        transform: translateX(-20px);
-    }
-    
-    .hamburger.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
-        background: var(--accent-600, #7c9df7);
+    .hamburger:hover {
+        background: rgba(163, 191, 250, 0.2) !important;
+        border-color: rgba(163, 191, 250, 0.4) !important;
+        transform: scale(1.05) !important;
     }
     
     .hamburger.active {
-        background: var(--accent-100, #efeffe);
+        background: var(--accent-600, #7c9df7) !important;
+        border-color: var(--accent-600, #7c9df7) !important;
     }
     
-    /* ASEGURAR QUE EL MENÚ DE NAVEGACIÓN ESTÉ OCULTO EN MÓVIL PERO FUNCIONAL */
+    .hamburger.active span {
+        background: white !important;
+    }
+    
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px) !important;
+    }
+    
+    .hamburger.active span:nth-child(2) {
+        opacity: 0 !important;
+        transform: translateX(-20px) !important;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px) !important;
+    }
+
+    /* MENÚ DE NAVEGACIÓN MÓVIL */
     .nav-menu {
         display: none !important;
         position: fixed !important;
         top: 0 !important;
         right: -100% !important;
-        width: 280px !important;
+        width: 300px !important;
         height: 100vh !important;
         background: rgba(255, 255, 255, 0.98) !important;
         backdrop-filter: blur(20px) !important;
         flex-direction: column !important;
         justify-content: flex-start !important;
         align-items: flex-start !important;
-        padding: 120px 2rem 2rem !important;
+        padding: 100px 2rem 2rem !important;
         transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
         z-index: 1000 !important;
-        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1) !important;
-        border-left: 1px solid var(--primary-200, #a1a8a9) !important;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15) !important;
+        border-left: 1px solid rgba(163, 191, 250, 0.3) !important;
     }
     
-    /* CUANDO EL MENÚ ESTÁ ACTIVO */
     .nav-menu.active {
         display: flex !important;
         right: 0 !important;
     }
     
-    /* ESTILOS PARA LOS ENLACES DEL MENÚ MÓVIL */
     .nav-menu li {
         width: 100% !important;
         margin: 0.5rem 0 !important;
@@ -167,6 +226,7 @@
         border-radius: 1rem !important;
         transition: all 0.3s ease !important;
         text-align: left !important;
+        border: 1px solid transparent !important;
     }
     
     .nav-menu .nav-link:hover,
@@ -174,6 +234,8 @@
         background: linear-gradient(135deg, #A3BFFA, #7c9df7) !important;
         color: white !important;
         transform: translateX(8px) !important;
+        border-color: rgba(255, 255, 255, 0.2) !important;
+        box-shadow: 0 4px 15px rgba(163, 191, 250, 0.3) !important;
     }
     
     /* OVERLAY PARA CERRAR EL MENÚ */
@@ -198,47 +260,14 @@
     
     /* PREVENIR SCROLL CUANDO EL MENÚ ESTÁ ABIERTO */
     body.nav-open {
-        overflow: hidden;
-    }
-    
-    /* EFECTOS HOVER PARA ICONOS */
-    .social-link:hover {
-        background: var(--accent-600, #7c9df7) !important;
-        color: white !important;
-        transform: translateY(-1px) !important;
-        box-shadow: 0 2px 8px rgba(163, 191, 250, 0.3) !important;
-    }
-    
-    /* AJUSTAR LOGO TEXT PARA QUE NO SE ROMPA */
-    .logo-text {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        white-space: nowrap !important;
-    }
-    
-    .logo-text h2 {
-        font-size: 0.9rem !important;
-        line-height: 1 !important;
-        margin: 0 !important;
-    }
-    
-    .logo-text span {
-        font-size: 0.6rem !important;
-        margin-top: 2px !important;
-    }
-    
-    /* AJUSTAR IMAGEN DEL LOGO */
-    .logo-image {
-        width: 35px !important;
-        height: 35px !important;
-        flex-shrink: 0 !important;
+        overflow: hidden !important;
     }
 }
 
-/* ===== IMAGEN DE FONDO HERO PARA MÓVIL ===== */
+/* ===== IMAGEN DE FONDO HERO CORREGIDA PARA MÓVIL ===== */
 @media screen and (max-width: 768px) {
-    /* Asegurar que el hero tenga la imagen de fondo visible */
+    /* CORREGIR HERO PARA INDEX.HTML */
+    .hero.gallery-hero,
     .gallery-hero {
         min-height: 100vh !important;
         background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%) !important;
@@ -246,10 +275,12 @@
         display: flex !important;
         align-items: center !important;
         overflow: hidden !important;
-        padding-top: 120px !important;
+        padding-top: 100px !important;
     }
 
-    /* Forzar la imagen de fondo en móvil */
+    /* FORZAR IMAGEN DE FONDO VISIBLE EN MÓVIL */
+    .hero.gallery-hero .hero-background,
+    .gallery-hero .hero-background,
     .hero-background {
         position: absolute !important;
         top: 0 !important;
@@ -260,7 +291,7 @@
         background-size: cover !important;
         background-position: center !important;
         background-repeat: no-repeat !important;
-        background-attachment: scroll !important; /* Cambiar de fixed a scroll para móvil */
+        background-attachment: scroll !important; /* CRÍTICO: scroll en lugar de fixed para móvil */
         z-index: 1 !important;
         /* Optimización para móviles */
         will-change: transform !important;
@@ -271,7 +302,9 @@
         display: block !important;
     }
 
-    /* Asegurar que el overlay esté presente */
+    /* OVERLAY MEJORADO */
+    .hero.gallery-hero .hero-overlay,
+    .gallery-hero .hero-overlay,
     .hero-overlay {
         position: absolute !important;
         top: 0 !important;
@@ -282,7 +315,9 @@
         z-index: 2 !important;
     }
 
-    /* Asegurar que el contenido esté por encima */
+    /* CONTENIDO HERO OPTIMIZADO */
+    .hero.gallery-hero .hero-content,
+    .gallery-hero .hero-content,
     .hero-content {
         position: relative !important;
         z-index: 3 !important;
@@ -295,31 +330,52 @@
         text-align: center !important;
         padding: 2rem 1rem !important;
         color: white !important;
+        grid-template-columns: 1fr !important; /* Override del grid de desktop */
+        gap: 2rem !important;
     }
 
-    /* Ajustar el texto del hero para móvil */
+    /* TEXTO HERO OPTIMIZADO */
+    .hero.gallery-hero .hero-text,
+    .gallery-hero .hero-text,
     .hero-text {
         position: relative !important;
         z-index: 4 !important;
         color: white !important;
         text-align: center !important;
         margin-bottom: 2rem !important;
+        margin-left: 0 !important; /* Override del margin-left de desktop */
+        padding-left: 0 !important; /* Override del padding-left de desktop */
+        max-width: 100% !important;
     }
 
+    .hero.gallery-hero .hero-text h1,
+    .gallery-hero .hero-text h1,
     .hero-text h1 {
         color: white !important;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8) !important;
         font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
         margin-bottom: 1rem !important;
+        line-height: 1.2 !important;
+        padding: 0.5rem 1rem !important;
+        background: linear-gradient(135deg, rgba(163, 191, 250, 0.15), rgba(124, 157, 247, 0.25)) !important;
+        border-radius: 0.5rem !important;
+        border: 2px solid rgba(163, 191, 250, 0.3) !important;
+        backdrop-filter: blur(20px) !important;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
     }
 
-    .hero-text h2 {
+    .hero.gallery-hero .hero-subtitle-main,
+    .gallery-hero .hero-subtitle-main,
+    .hero-subtitle-main {
         color: white !important;
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6) !important;
         font-size: clamp(1.2rem, 4vw, 2rem) !important;
         margin-bottom: 1rem !important;
+        line-height: 1.3 !important;
     }
 
+    .hero.gallery-hero .hero-text p,
+    .gallery-hero .hero-text p,
     .hero-text p {
         color: rgba(255, 255, 255, 0.9) !important;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
@@ -329,7 +385,9 @@
         margin: 0 auto 2rem !important;
     }
 
-    /* Ajustar la imagen del arquitecto para móvil */
+    /* IMAGEN DEL ARQUITECTO OPTIMIZADA */
+    .hero.gallery-hero .hero-image,
+    .gallery-hero .hero-image,
     .hero-image {
         position: relative !important;
         z-index: 4 !important;
@@ -338,8 +396,12 @@
         align-items: center !important;
         gap: 1rem !important;
         margin-top: 2rem !important;
+        margin-left: 0 !important; /* Override del margin-left de desktop */
+        width: auto !important;
     }
 
+    .hero.gallery-hero .image-placeholder,
+    .gallery-hero .image-placeholder,
     .image-placeholder {
         width: 280px !important;
         height: 320px !important;
@@ -351,6 +413,8 @@
         box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3) !important;
     }
 
+    .hero.gallery-hero .architect-image,
+    .gallery-hero .architect-image,
     .architect-image {
         width: 250px !important;
         height: 290px !important;
@@ -359,13 +423,17 @@
         object-position: center top !important;
     }
 
-    /* Ajustar los badges flotantes */
+    /* BADGES FLOTANTES */
+    .hero.gallery-hero .floating-badges,
+    .gallery-hero .floating-badges,
     .floating-badges {
         display: flex !important;
         flex-direction: row !important;
         justify-content: center !important;
         gap: 0.5rem !important;
         margin-top: 1rem !important;
+        position: static !important; /* Override del position de desktop */
+        align-self: center !important;
     }
 
     .badge-item {
@@ -374,7 +442,9 @@
         border-radius: 8px !important;
     }
 
-    /* Asegurar que los botones sean visibles */
+    /* BOTONES HERO */
+    .hero.gallery-hero .hero-buttons,
+    .gallery-hero .hero-buttons,
     .hero-buttons {
         position: relative !important;
         z-index: 4 !important;
@@ -386,6 +456,8 @@
         max-width: 300px !important;
     }
 
+    .hero.gallery-hero .btn,
+    .gallery-hero .btn,
     .btn {
         width: 100% !important;
         padding: 1rem !important;
@@ -398,60 +470,62 @@
 /* ===== MÓVILES MUY PEQUEÑOS ===== */
 @media screen and (max-width: 480px) {
     .nav-container {
-        padding: 0 0.75rem !important;
+        padding: 0.5rem 0.75rem !important;
         gap: 0.25rem !important;
+        height: 65px !important;
     }
     
     .logo {
-        gap: 0.75rem !important;
-        max-width: calc(100% - 90px) !important;
+        gap: 0.5rem !important;
+        max-width: calc(100% - 120px) !important;
+    }
+    
+    .logo-image {
+        width: 35px !important;
+        height: 35px !important;
+    }
+    
+    .logo-text h2 {
+        font-size: 0.85rem !important;
+    }
+    
+    .logo-text span {
+        font-size: 0.6rem !important;
     }
     
     .social-links {
-        gap: 0.2rem !important;
+        gap: 0.3rem !important;
         margin-right: 0.25rem !important;
     }
     
     .social-link {
-        width: 26px !important;
-        height: 26px !important;
-        font-size: 0.7rem !important;
-        min-width: 26px !important;
-        min-height: 26px !important;
+        width: 28px !important;
+        height: 28px !important;
+        min-width: 28px !important;
+        min-height: 28px !important;
     }
     
     .social-link img {
-        width: 14px !important;
-        height: 14px !important;
+        width: 16px !important;
+        height: 16px !important;
     }
     
     .hamburger {
-        width: 36px !important;
-        height: 36px !important;
-    }
-    
-    .logo-text h2 {
-        font-size: 0.8rem !important;
-    }
-    
-    .logo-text span {
-        font-size: 0.55rem !important;
-    }
-    
-    .logo-image {
-        width: 32px !important;
-        height: 32px !important;
+        width: 40px !important;
+        height: 40px !important;
+        margin-left: 0.25rem !important;
     }
     
     .nav-menu {
-        width: 260px !important;
-        padding: 70px 1.5rem 1.5rem !important;
+        width: 280px !important;
+        padding: 80px 1.5rem 1.5rem !important;
     }
     
     /* Hero para móviles pequeños */
+    .hero.gallery-hero,
     .gallery-hero {
         min-height: 100vh !important;
-        padding-top: 100px !important;
+        padding-top: 80px !important;
     }
 
     .hero-content {
@@ -484,93 +558,62 @@
 /* ===== MÓVILES EXTRA PEQUEÑOS ===== */
 @media screen and (max-width: 360px) {
     .nav-container {
-        padding: 0 0.5rem !important;
+        padding: 0.5rem !important;
         gap: 0.2rem !important;
     }
     
     .logo {
-        gap: 0.5rem !important;
-        max-width: calc(100% - 80px) !important;
+        gap: 0.4rem !important;
+        max-width: calc(100% - 110px) !important;
     }
     
-    .social-links {
-        gap: 0.15rem !important;
-        margin-right: 0.2rem !important;
-    }
-    
-    .social-link {
-        width: 24px !important;
-        height: 24px !important;
-        font-size: 0.65rem !important;
-        min-width: 24px !important;
-        min-height: 24px !important;
-    }
-    
-    .social-link img {
-        width: 12px !important;
-        height: 12px !important;
-    }
-    
-    .hamburger {
+    .logo-image {
         width: 32px !important;
         height: 32px !important;
     }
     
     .logo-text h2 {
-        font-size: 0.75rem !important;
+        font-size: 0.8rem !important;
     }
     
     .logo-text span {
-        font-size: 0.5rem !important;
+        font-size: 0.55rem !important;
     }
     
-    .logo-image {
-        width: 28px !important;
-        height: 28px !important;
+    .social-links {
+        gap: 0.2rem !important;
+        margin-right: 0.2rem !important;
+    }
+    
+    .social-link {
+        width: 26px !important;
+        height: 26px !important;
+        min-width: 26px !important;
+        min-height: 26px !important;
+    }
+    
+    .social-link img {
+        width: 14px !important;
+        height: 14px !important;
+    }
+    
+    .hamburger {
+        width: 36px !important;
+        height: 36px !important;
     }
     
     .nav-menu {
-        width: 240px !important;
-        padding: 60px 1rem 1rem !important;
+        width: 260px !important;
+        padding: 70px 1rem 1rem !important;
     }
 }
 
 /* ===== ORIENTACIONES ESPECÍFICAS ===== */
-/* FORZAR EN ORIENTACIÓN PORTRAIT (VERTICAL) */
-@media screen and (max-width: 768px) and (orientation: portrait) {
-    .social-links {
-        display: flex !important;
-        flex-direction: row !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-    }
-    
-    .social-link {
-        display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-    }
-}
-
-/* FORZAR EN ORIENTACIÓN LANDSCAPE (HORIZONTAL) */
 @media screen and (max-width: 768px) and (orientation: landscape) {
-    .social-links {
-        display: flex !important;
-        flex-direction: row !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-    }
-    
-    .social-link {
-        display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-    }
-    
-    /* Hero en landscape */
+    .hero.gallery-hero,
     .gallery-hero {
         min-height: 100vh !important;
-        padding-top: 80px !important;
+        padding-top: 70px !important;
     }
 
     .hero-content {
@@ -578,12 +621,14 @@
         align-items: center !important;
         justify-content: space-around !important;
         padding: 1rem !important;
+        grid-template-columns: 1fr 1fr !important;
     }
 
     .hero-text {
         flex: 1 !important;
         margin-bottom: 0 !important;
         margin-right: 1rem !important;
+        text-align: left !important;
     }
 
     .hero-image {
@@ -602,6 +647,36 @@
     }
 }
 
+/* ===== CORRECCIONES ESPECÍFICAS PARA NAVEGADORES MÓVILES ===== */
+/* iOS Safari */
+@supports (-webkit-touch-callout: none) {
+    @media screen and (max-width: 768px) {
+        .hero-background {
+            background-attachment: scroll !important;
+            background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') !important;
+            background-size: cover !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            min-height: 100vh !important;
+            height: 100vh !important;
+        }
+        
+        .hero.gallery-hero,
+        .gallery-hero {
+            background-attachment: scroll !important;
+        }
+    }
+}
+
+/* Android Chrome */
+@media screen and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
+    .hero-background {
+        background-attachment: scroll !important;
+        background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') !important;
+        transform: translate3d(0, 0, 0) !important;
+    }
+}
+
 /* ===== OVERRIDE CUALQUIER CSS QUE PUEDA ESTAR OCULTANDO LOS ICONOS ===== */
 @media screen and (max-width: 768px) {
     .social-links,
@@ -615,35 +690,6 @@
     
     .social-links {
         flex-direction: row !important;
-    }
-}
-
-/* ===== CORRECCIONES ESPECÍFICAS PARA NAVEGADORES MÓVILES ===== */
-/* Corrección adicional para iOS Safari */
-@supports (-webkit-touch-callout: none) {
-    @media screen and (max-width: 768px) {
-        .hero-background {
-            background-attachment: scroll !important;
-            background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') !important;
-            background-size: cover !important;
-            background-position: center !important;
-            background-repeat: no-repeat !important;
-            min-height: 100vh !important;
-            height: 100vh !important;
-        }
-        
-        .gallery-hero {
-            background-attachment: scroll !important;
-        }
-    }
-}
-
-/* Corrección para Android Chrome */
-@media screen and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
-    .hero-background {
-        background-attachment: scroll !important;
-        background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') !important;
-        transform: translate3d(0, 0, 0) !important;
     }
 }
 
