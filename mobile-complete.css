@@ -1,0 +1,1831 @@
+/* ===== DISEÑO MÓVIL COMPLETO Y CONSOLIDADO ===== */
+
+/* Archivo único que contiene todas las correcciones móviles */
+
+/* ===== HEADER MÓVIL MEJORADO (MODELO PROYECTOS) ===== */
+
+@media screen and (max-width: 768px) {
+
+/* HEADER FIJO Y OPTIMIZADO */
+
+.header {
+
+position: fixed !important;
+
+top: 0 !important;
+
+width: 100% !important;
+
+background: rgba(255, 255, 255, 0.98) !important;
+
+backdrop-filter: blur(20px) saturate(180%) !important;
+
+border-bottom: 1px solid rgba(163, 191, 250, 0.2) !important;
+
+z-index: 1050 !important;
+
+box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1) !important;
+
+transition: all 0.3s ease !important;
+
+}
+
+/* CONTENEDOR DE NAVEGACIÓN OPTIMIZADO */
+
+.nav-container {
+
+display: flex !important;
+
+justify-content: space-between !important;
+
+align-items: center !important;
+
+padding: 0.75rem 1rem !important;
+
+gap: 0.5rem !important;
+
+position: relative !important;
+
+width: 100% !important;
+
+flex-wrap: nowrap !important;
+
+height: 70px !important;
+
+}
+
+/* LOGO OPTIMIZADO */
+
+.logo {
+
+order: 1 !important;
+
+flex-shrink: 0 !important;
+
+display: flex !important;
+
+align-items: center !important;
+
+gap: 0.75rem !important;
+
+flex: 1 !important;
+
+max-width: calc(100% - 140px) !important;
+
+text-decoration: none !important;
+
+}
+
+.logo-image {
+
+width: 40px !important;
+
+height: 40px !important;
+
+flex-shrink: 0 !important;
+
+border-radius: 8px !important;
+
+}
+
+.logo-text {
+
+display: flex !important;
+
+flex-direction: column !important;
+
+align-items: flex-start !important;
+
+white-space: nowrap !important;
+
+}
+
+.logo-text h2 {
+
+font-size: 0.95rem !important;
+
+line-height: 1 !important;
+
+margin: 0 !important;
+
+color: #1C2526 !important;
+
+font-weight: 800 !important;
+
+letter-spacing: -0.5px !important;
+
+}
+
+.logo-text span {
+
+font-size: 0.65rem !important;
+
+margin-top: 2px !important;
+
+color: #1C2526 !important;
+
+font-weight: 500 !important;
+
+letter-spacing: 0.5px !important;
+
+text-transform: uppercase !important;
+
+}
+
+/* ICONOS SOCIALES HORIZONTALES AL LADO DEL LOGO */
+
+.social-links {
+
+display: flex !important;
+
+flex-direction: row !important;
+
+visibility: visible !important;
+
+opacity: 1 !important;
+
+position: relative !important;
+
+order: 2 !important;
+
+gap: 0.4rem !important;
+
+justify-content: flex-end !important;
+
+align-items: center !important;
+
+flex-shrink: 0 !important;
+
+margin-left: auto !important;
+
+margin-right: 0.5rem !important;
+
+z-index: 1000 !important;
+
+flex-wrap: nowrap !important;
+
+}
+
+.social-link {
+
+display: flex !important;
+
+visibility: visible !important;
+
+opacity: 1 !important;
+
+width: 32px !important;
+
+height: 32px !important;
+
+font-size: 0.8rem !important;
+
+border-radius: 8px !important;
+
+background: rgba(163, 191, 250, 0.15) !important;
+
+border: 1px solid rgba(163, 191, 250, 0.3) !important;
+
+transition: all 0.3s ease !important;
+
+align-items: center !important;
+
+justify-content: center !important;
+
+flex-shrink: 0 !important;
+
+min-width: 32px !important;
+
+min-height: 32px !important;
+
+text-decoration: none !important;
+
+}
+
+.social-link img {
+
+display: block !important;
+
+visibility: visible !important;
+
+opacity: 1 !important;
+
+width: 18px !important;
+
+height: 18px !important;
+
+object-fit: contain !important;
+
+}
+
+.social-link:hover {
+
+background: var(--accent-600, #7c9df7) !important;
+
+color: white !important;
+
+transform: translateY(-1px) !important;
+
+box-shadow: 0 4px 12px rgba(163, 191, 250, 0.4) !important;
+
+border-color: var(--accent-600, #7c9df7) !important;
+
+}
+
+/* HAMBURGER MEJORADO */
+
+.hamburger {
+
+order: 3 !important;
+
+display: flex !important;
+
+flex-direction: column !important;
+
+justify-content: center !important;
+
+align-items: center !important;
+
+width: 44px !important;
+
+height: 44px !important;
+
+padding: 8px !important;
+
+cursor: pointer !important;
+
+z-index: 1001 !important;
+
+flex-shrink: 0 !important;
+
+background: rgba(163, 191, 250, 0.1) !important;
+
+border: 1px solid rgba(163, 191, 250, 0.2) !important;
+
+border-radius: 10px !important;
+
+transition: all 0.3s ease !important;
+
+margin-left: 0.5rem !important;
+
+}
+
+.hamburger span {
+
+width: 24px !important;
+
+height: 2px !important;
+
+background: var(--primary-700, #384142) !important;
+
+margin: 2px 0 !important;
+
+transition: all 0.3s ease !important;
+
+border-radius: 1px !important;
+
+transform-origin: center !important;
+
+}
+
+.hamburger:hover {
+
+background: rgba(163, 191, 250, 0.2) !important;
+
+border-color: rgba(163, 191, 250, 0.4) !important;
+
+transform: scale(1.05) !important;
+
+}
+
+.hamburger.active {
+
+background: var(--accent-600, #7c9df7) !important;
+
+border-color: var(--accent-600, #7c9df7) !important;
+
+}
+
+.hamburger.active span {
+
+background: white !important;
+
+}
+
+.hamburger.active span:nth-child(1) {
+
+transform: rotate(45deg) translate(5px, 5px) !important;
+
+}
+
+.hamburger.active span:nth-child(2) {
+
+opacity: 0 !important;
+
+transform: translateX(-20px) !important;
+
+}
+
+.hamburger.active span:nth-child(3) {
+
+transform: rotate(-45deg) translate(7px, -6px) !important;
+
+}
+
+/* MENÚ DE NAVEGACIÓN MÓVIL */
+
+.nav-menu {
+
+display: none !important;
+
+position: fixed !important;
+
+top: 0 !important;
+
+right: -100% !important;
+
+width: 300px !important;
+
+height: 100vh !important;
+
+background: rgba(255, 255, 255, 0.98) !important;
+
+backdrop-filter: blur(20px) !important;
+
+flex-direction: column !important;
+
+justify-content: flex-start !important;
+
+align-items: flex-start !important;
+
+padding: 100px 2rem 2rem !important;
+
+transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+
+z-index: 1000 !important;
+
+box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15) !important;
+
+border-left: 1px solid rgba(163, 191, 250, 0.3) !important;
+
+}
+
+.nav-menu.active {
+
+display: flex !important;
+
+right: 0 !important;
+
+}
+
+.nav-menu li {
+
+width: 100% !important;
+
+margin: 0.5rem 0 !important;
+
+}
+
+.nav-menu .nav-link {
+
+display: block !important;
+
+width: 100% !important;
+
+padding: 1rem 1.5rem !important;
+
+font-size: 1.1rem !important;
+
+font-weight: 600 !important;
+
+color: var(--primary-700, #384142) !important;
+
+text-decoration: none !important;
+
+border-radius: 1rem !important;
+
+transition: all 0.3s ease !important;
+
+text-align: left !important;
+
+border: 1px solid transparent !important;
+
+}
+
+.nav-menu .nav-link:hover,
+
+.nav-menu .nav-link.active {
+
+background: linear-gradient(135deg, #A3BFFA, #7c9df7) !important;
+
+color: white !important;
+
+transform: translateX(8px) !important;
+
+border-color: rgba(255, 255, 255, 0.2) !important;
+
+box-shadow: 0 4px 15px rgba(163, 191, 250, 0.3) !important;
+
+}
+
+/* OVERLAY PARA CERRAR EL MENÚ */
+
+.nav-overlay {
+
+position: fixed !important;
+
+top: 0 !important;
+
+left: 0 !important;
+
+width: 100% !important;
+
+height: 100% !important;
+
+background: rgba(0, 0, 0, 0.5) !important;
+
+backdrop-filter: blur(5px) !important;
+
+z-index: 999 !important;
+
+opacity: 0 !important;
+
+visibility: hidden !important;
+
+transition: all 0.3s ease !important;
+
+}
+
+.nav-overlay.active {
+
+opacity: 1 !important;
+
+visibility: visible !important;
+
+}
+
+/* PREVENIR SCROLL CUANDO EL MENÚ ESTÁ ABIERTO */
+
+body.nav-open {
+
+overflow: hidden !important;
+
+}
+
+}
+
+/* ===== IMAGEN DE FONDO HERO CORREGIDA PARA MÓVIL ===== */
+
+@media screen and (max-width: 768px) {
+
+/* CORREGIR HERO PARA INDEX.HTML */
+
+.hero.gallery-hero,
+
+.gallery-hero {
+
+min-height: 100vh !important;
+
+background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%) !important;
+
+position: relative !important;
+
+display: flex !important;
+
+align-items: center !important;
+
+overflow: hidden !important;
+
+padding-top: 100px !important;
+
+}
+
+/* FORZAR IMAGEN DE FONDO VISIBLE EN MÓVIL */
+
+.hero.gallery-hero .hero-background,
+
+.gallery-hero .hero-background,
+
+.hero-background {
+
+position: absolute !important;
+
+top: 0 !important;
+
+left: 0 !important;
+
+width: 100% !important;
+
+height: 100% !important;
+
+background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') !important;
+
+background-size: cover !important;
+
+background-position: center !important;
+
+background-repeat: no-repeat !important;
+
+background-attachment: scroll !important; /* CRÍTICO: scroll en lugar de fixed para móvil */
+
+z-index: 1 !important;
+
+/* Optimización para móviles */
+
+will-change: transform !important;
+
+transform: translateZ(0) !important;
+
+/* Forzar visibilidad */
+
+opacity: 1 !important;
+
+visibility: visible !important;
+
+display: block !important;
+
+}
+
+/* OVERLAY MEJORADO */
+
+.hero.gallery-hero .hero-overlay,
+
+.gallery-hero .hero-overlay,
+
+.hero-overlay {
+
+position: absolute !important;
+
+top: 0 !important;
+
+left: 0 !important;
+
+width: 100% !important;
+
+height: 100% !important;
+
+background: linear-gradient(135deg, rgba(26, 26, 46, 0.85) 0%, rgba(22, 33, 62, 0.75) 50%, rgba(15, 52, 96, 0.85) 100%) !important;
+
+z-index: 2 !important;
+
+}
+
+/* CONTENIDO HERO OPTIMIZADO */
+
+.hero.gallery-hero .hero-content,
+
+.gallery-hero .hero-content,
+
+.hero-content {
+
+position: relative !important;
+
+z-index: 3 !important;
+
+width: 100% !important;
+
+height: 100% !important;
+
+display: flex !important;
+
+flex-direction: column !important;
+
+justify-content: center !important;
+
+align-items: center !important;
+
+text-align: center !important;
+
+padding: 2rem 1rem !important;
+
+color: white !important;
+
+grid-template-columns: 1fr !important; /* Override del grid de desktop */
+
+gap: 2rem !important;
+
+}
+
+/* TEXTO HERO OPTIMIZADO */
+
+.hero.gallery-hero .hero-text,
+
+.gallery-hero .hero-text,
+
+.hero-text {
+
+position: relative !important;
+
+z-index: 4 !important;
+
+color: white !important;
+
+text-align: center !important;
+
+margin-bottom: 2rem !important;
+
+margin-left: 0 !important; /* Override del margin-left de desktop */
+
+padding-left: 0 !important; /* Override del padding-left de desktop */
+
+max-width: 100% !important;
+
+}
+
+.hero.gallery-hero .hero-text h1,
+
+.gallery-hero .hero-text h1,
+
+.hero-text h1 {
+
+color: white !important;
+
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8) !important;
+
+font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
+
+margin-bottom: 1rem !important;
+
+line-height: 1.2 !important;
+
+padding: 0.5rem 1rem !important;
+
+background: linear-gradient(135deg, rgba(163, 191, 250, 0.15), rgba(124, 157, 247, 0.25)) !important;
+
+border-radius: 0.5rem !important;
+
+border: 2px solid rgba(163, 191, 250, 0.3) !important;
+
+backdrop-filter: blur(20px) !important;
+
+box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
+
+}
+
+.hero.gallery-hero .hero-subtitle-main,
+
+.gallery-hero .hero-subtitle-main,
+
+.hero-subtitle-main {
+
+color: white !important;
+
+text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6) !important;
+
+font-size: clamp(1.2rem, 4vw, 2rem) !important;
+
+margin-bottom: 1rem !important;
+
+line-height: 1.3 !important;
+
+}
+
+.hero.gallery-hero .hero-text p,
+
+.gallery-hero .hero-text p,
+
+.hero-text p {
+
+color: rgba(255, 255, 255, 0.9) !important;
+
+text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
+
+font-size: clamp(0.9rem, 3vw, 1.1rem) !important;
+
+line-height: 1.6 !important;
+
+max-width: 90% !important;
+
+margin: 0 auto 2rem !important;
+
+}
+
+/* IMAGEN DEL ARQUITECTO OPTIMIZADA */
+
+.hero.gallery-hero .hero-image,
+
+.gallery-hero .hero-image,
+
+.hero-image {
+
+position: relative !important;
+
+z-index: 4 !important;
+
+display: flex !important;
+
+flex-direction: column !important;
+
+align-items: center !important;
+
+gap: 1rem !important;
+
+margin-top: 2rem !important;
+
+margin-left: 0 !important; /* Override del margin-left de desktop */
+
+width: auto !important;
+
+}
+
+.hero.gallery-hero .image-placeholder,
+
+.gallery-hero .image-placeholder,
+
+.image-placeholder {
+
+width: 280px !important;
+
+height: 320px !important;
+
+background: rgba(255, 255, 255, 0.1) !important;
+
+backdrop-filter: blur(20px) !important;
+
+border: 1px solid rgba(255, 255, 255, 0.2) !important;
+
+border-radius: 20px !important;
+
+padding: 15px !important;
+
+box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3) !important;
+
+}
+
+.hero.gallery-hero .architect-image,
+
+.gallery-hero .architect-image,
+
+.architect-image {
+
+width: 250px !important;
+
+height: 290px !important;
+
+border-radius: 16px !important;
+
+object-fit: cover !important;
+
+object-position: center top !important;
+
+}
+
+/* BADGES FLOTANTES */
+
+.hero.gallery-hero .floating-badges,
+
+.gallery-hero .floating-badges,
+
+.floating-badges {
+
+display: flex !important;
+
+flex-direction: row !important;
+
+justify-content: center !important;
+
+gap: 0.5rem !important;
+
+margin-top: 1rem !important;
+
+position: static !important; /* Override del position de desktop */
+
+align-self: center !important;
+
+}
+
+.badge-item {
+
+padding: 6px 10px !important;
+
+font-size: 11px !important;
+
+border-radius: 8px !important;
+
+}
+
+/* BOTONES HERO */
+
+.hero.gallery-hero .hero-buttons,
+
+.gallery-hero .hero-buttons,
+
+.hero-buttons {
+
+position: relative !important;
+
+z-index: 4 !important;
+
+display: flex !important;
+
+flex-direction: column !important;
+
+gap: 1rem !important;
+
+margin-top: 2rem !important;
+
+width: 100% !important;
+
+max-width: 300px !important;
+
+}
+
+.hero.gallery-hero .btn,
+
+.gallery-hero .btn,
+
+.btn {
+
+width: 100% !important;
+
+padding: 1rem !important;
+
+font-size: 1rem !important;
+
+text-align: center !important;
+
+border-radius: 12px !important;
+
+}
+
+}
+
+/* ===== MÓVILES MUY PEQUEÑOS ===== */
+
+@media screen and (max-width: 480px) {
+
+.nav-container {
+
+padding: 0.5rem 0.75rem !important;
+
+gap: 0.25rem !important;
+
+height: 65px !important;
+
+}
+
+.logo {
+
+gap: 0.5rem !important;
+
+max-width: calc(100% - 120px) !important;
+
+}
+
+.logo-image {
+
+width: 35px !important;
+
+height: 35px !important;
+
+}
+
+.logo-text h2 {
+
+font-size: 0.85rem !important;
+
+}
+
+.logo-text span {
+
+font-size: 0.6rem !important;
+
+}
+
+.social-links {
+
+gap: 0.3rem !important;
+
+margin-right: 0.25rem !important;
+
+}
+
+.social-link {
+
+width: 28px !important;
+
+height: 28px !important;
+
+min-width: 28px !important;
+
+min-height: 28px !important;
+
+}
+
+.social-link img {
+
+width: 16px !important;
+
+height: 16px !important;
+
+}
+
+.hamburger {
+
+width: 40px !important;
+
+height: 40px !important;
+
+margin-left: 0.25rem !important;
+
+}
+
+.nav-menu {
+
+width: 280px !important;
+
+padding: 80px 1.5rem 1.5rem !important;
+
+}
+
+/* Hero para móviles pequeños */
+
+.hero.gallery-hero,
+
+.gallery-hero {
+
+min-height: 100vh !important;
+
+padding-top: 80px !important;
+
+}
+
+.hero-content {
+
+padding: 1.5rem 0.75rem !important;
+
+}
+
+.image-placeholder {
+
+width: 240px !important;
+
+height: 280px !important;
+
+}
+
+.architect-image {
+
+width: 210px !important;
+
+height: 250px !important;
+
+}
+
+.hero-text h1 {
+
+font-size: clamp(1.3rem, 6vw, 2rem) !important;
+
+}
+
+.hero-text h2 {
+
+font-size: clamp(1rem, 5vw, 1.5rem) !important;
+
+}
+
+.hero-text p {
+
+font-size: clamp(0.85rem, 4vw, 1rem) !important;
+
+}
+
+}
+
+/* ===== MÓVILES EXTRA PEQUEÑOS ===== */
+
+@media screen and (max-width: 360px) {
+
+.nav-container {
+
+padding: 0.5rem !important;
+
+gap: 0.2rem !important;
+
+}
+
+.logo {
+
+gap: 0.4rem !important;
+
+max-width: calc(100% - 110px) !important;
+
+}
+
+.logo-image {
+
+width: 32px !important;
+
+height: 32px !important;
+
+}
+
+.logo-text h2 {
+
+font-size: 0.8rem !important;
+
+}
+
+.logo-text span {
+
+font-size: 0.55rem !important;
+
+}
+
+.social-links {
+
+gap: 0.2rem !important;
+
+margin-right: 0.2rem !important;
+
+}
+
+.social-link {
+
+width: 26px !important;
+
+height: 26px !important;
+
+min-width: 26px !important;
+
+min-height: 26px !important;
+
+}
+
+.social-link img {
+
+width: 14px !important;
+
+height: 14px !important;
+
+}
+
+.hamburger {
+
+width: 36px !important;
+
+height: 36px !important;
+
+}
+
+.nav-menu {
+
+width: 260px !important;
+
+padding: 70px 1rem 1rem !important;
+
+}
+
+}
+
+/* ===== ORIENTACIONES ESPECÍFICAS ===== */
+
+@media screen and (max-width: 768px) and (orientation: landscape) {
+
+.hero.gallery-hero,
+
+.gallery-hero {
+
+min-height: 100vh !important;
+
+padding-top: 70px !important;
+
+}
+
+.hero-content {
+
+flex-direction: row !important;
+
+align-items: center !important;
+
+justify-content: space-around !important;
+
+padding: 1rem !important;
+
+grid-template-columns: 1fr 1fr !important;
+
+}
+
+.hero-text {
+
+flex: 1 !important;
+
+margin-bottom: 0 !important;
+
+margin-right: 1rem !important;
+
+text-align: left !important;
+
+}
+
+.hero-image {
+
+flex: 1 !important;
+
+margin-top: 0 !important;
+
+}
+
+.image-placeholder {
+
+width: 200px !important;
+
+height: 240px !important;
+
+}
+
+.architect-image {
+
+width: 170px !important;
+
+height: 210px !important;
+
+}
+
+}
+
+/* ===== CORRECCIONES ESPECÍFICAS PARA NAVEGADORES MÓVILES ===== */
+
+/* iOS Safari */
+
+@supports (-webkit-touch-callout: none) {
+
+@media screen and (max-width: 768px) {
+
+.hero-background {
+
+background-attachment: scroll !important;
+
+background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') !important;
+
+background-size: cover !important;
+
+background-position: center !important;
+
+background-repeat: no-repeat !important;
+
+min-height: 100vh !important;
+
+height: 100vh !important;
+
+}
+
+.hero.gallery-hero,
+
+.gallery-hero {
+
+background-attachment: scroll !important;
+
+}
+
+}
+
+}
+
+/* Android Chrome */
+
+@media screen and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
+
+.hero-background {
+
+background-attachment: scroll !important;
+
+background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') !important;
+
+transform: translate3d(0, 0, 0) !important;
+
+}
+
+}
+
+/* ===== OVERRIDE CUALQUIER CSS QUE PUEDA ESTAR OCULTANDO LOS ICONOS ===== */
+
+@media screen and (max-width: 768px) {
+
+.social-links,
+
+.social-link,
+
+.social-link img {
+
+display: flex !important;
+
+visibility: visible !important;
+
+opacity: 1 !important;
+
+pointer-events: auto !important;
+
+}
+
+.social-links {
+
+flex-direction: row !important;
+
+}
+
+}
+
+/* ===== ASEGURAR QUE EN DESKTOP SE MANTENGA EL DISEÑO ORIGINAL ===== */
+
+@media screen and (min-width: 769px) {
+
+.social-links {
+
+order: initial !important;
+
+margin-left: initial !important;
+
+margin-right: initial !important;
+
+gap: var(--space-3, 0.75rem) !important;
+
+flex-direction: row !important;
+
+}
+
+.social-link {
+
+width: 40px !important;
+
+height: 40px !important;
+
+font-size: var(--font-size-sm, 0.875rem) !important;
+
+border-radius: var(--radius-base, 0.5rem) !important;
+
+background: var(--primary-100, #c0c5c6) !important;
+
+border: none !important;
+
+}
+
+.logo {
+
+gap: var(--space-3, 0.75rem) !important;
+
+flex: initial !important;
+
+max-width: initial !important;
+
+}
+
+.nav-menu {
+
+display: flex !important;
+
+position: static !important;
+
+width: auto !important;
+
+height: auto !important;
+
+background: transparent !important;
+
+backdrop-filter: none !important;
+
+flex-direction: row !important;
+
+padding: 0 !important;
+
+box-shadow: none !important;
+
+}
+
+.hamburger {
+
+display: none !important;
+
+}
+
+.nav-overlay {
+
+display: none !important;
+
+}
+
+}
+
+/* ===== IMAGEN DE FONDO HERO CORREGIDA PARA MÓVIL ===== */
+
+@media screen and (max-width: 768px) {
+
+/* CORREGIR HERO PARA INDEX.HTML */
+
+.hero.gallery-hero,
+
+.gallery-hero {
+
+min-height: 100vh !important;
+
+background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%) !important;
+
+position: relative !important;
+
+display: flex !important;
+
+align-items: center !important;
+
+overflow: hidden !important;
+
+padding-top: 100px !important;
+
+}
+
+/* FORZAR IMAGEN DE FONDO VISIBLE EN MÓVIL */
+
+.hero.gallery-hero .hero-background,
+
+.gallery-hero .hero-background,
+
+.hero-background {
+
+position: absolute !important;
+
+top: 0 !important;
+
+left: 0 !important;
+
+width: 100% !important;
+
+height: 100% !important;
+
+background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') !important;
+
+background-size: cover !important;
+
+background-position: center !important;
+
+background-repeat: no-repeat !important;
+
+background-attachment: scroll !important; /* CRÍTICO: scroll en lugar de fixed para móvil */
+
+z-index: 1 !important;
+
+/* Optimización para móviles */
+
+will-change: transform !important;
+
+transform: translateZ(0) !important;
+
+/* Forzar visibilidad */
+
+opacity: 1 !important;
+
+visibility: visible !important;
+
+display: block !important;
+
+}
+
+/* OVERLAY MEJORADO */
+
+.hero.gallery-hero .hero-overlay,
+
+.gallery-hero .hero-overlay,
+
+.hero-overlay {
+
+position: absolute !important;
+
+top: 0 !important;
+
+left: 0 !important;
+
+width: 100% !important;
+
+height: 100% !important;
+
+background: linear-gradient(135deg, rgba(26, 26, 46, 0.85) 0%, rgba(22, 33, 62, 0.75) 50%, rgba(15, 52, 96, 0.85) 100%) !important;
+
+z-index: 2 !important;
+
+}
+
+/* CONTENIDO HERO OPTIMIZADO */
+
+.hero.gallery-hero .hero-content,
+
+.gallery-hero .hero-content,
+
+.hero-content {
+
+position: relative !important;
+
+z-index: 3 !important;
+
+width: 100% !important;
+
+height: 100% !important;
+
+display: flex !important;
+
+flex-direction: column !important;
+
+justify-content: center !important;
+
+align-items: center !important;
+
+text-align: center !important;
+
+padding: 2rem 1rem !important;
+
+color: white !important;
+
+grid-template-columns: 1fr !important; /* Override del grid de desktop */
+
+gap: 2rem !important;
+
+}
+
+/* TEXTO HERO OPTIMIZADO */
+
+.hero.gallery-hero .hero-text,
+
+.gallery-hero .hero-text,
+
+.hero-text {
+
+position: relative !important;
+
+z-index: 4 !important;
+
+color: white !important;
+
+text-align: center !important;
+
+margin-bottom: 2rem !important;
+
+margin-left: 0 !important; /* Override del margin-left de desktop */
+
+padding-left: 0 !important; /* Override del padding-left de desktop */
+
+max-width: 100% !important;
+
+}
+
+.hero.gallery-hero .hero-text h1,
+
+.gallery-hero .hero-text h1,
+
+.hero-text h1 {
+
+color: white !important;
+
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8) !important;
+
+font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
+
+margin-bottom: 1rem !important;
+
+line-height: 1.2 !important;
+
+padding: 0.5rem 1rem !important;
+
+background: linear-gradient(135deg, rgba(163, 191, 250, 0.15), rgba(124, 157, 247, 0.25)) !important;
+
+border-radius: 0.5rem !important;
+
+border: 2px solid rgba(163, 191, 250, 0.3) !important;
+
+backdrop-filter: blur(20px) !important;
+
+box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
+
+}
+
+.hero.gallery-hero .hero-subtitle-main,
+
+.gallery-hero .hero-subtitle-main,
+
+.hero-subtitle-main {
+
+color: white !important;
+
+text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6) !important;
+
+font-size: clamp(1.2rem, 4vw, 2rem) !important;
+
+margin-bottom: 1rem !important;
+
+line-height: 1.3 !important;
+
+}
+
+.hero.gallery-hero .hero-text p,
+
+.gallery-hero .hero-text p,
+
+.hero-text p {
+
+color: rgba(255, 255, 255, 0.9) !important;
+
+text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
+
+font-size: clamp(0.9rem, 3vw, 1.1rem) !important;
+
+line-height: 1.6 !important;
+
+max-width: 90% !important;
+
+margin: 0 auto 2rem !important;
+
+}
+
+/* IMAGEN DEL ARQUITECTO OPTIMIZADA */
+
+.hero.gallery-hero .hero-image,
+
+.gallery-hero .hero-image,
+
+.hero-image {
+
+position: relative !important;
+
+z-index: 4 !important;
+
+display: flex !important;
+
+flex-direction: column !important;
+
+align-items: center !important;
+
+gap: 1rem !important;
+
+margin-top: 2rem !important;
+
+margin-left: 0 !important; /* Override del margin-left de desktop */
+
+width: auto !important;
+
+}
+
+.hero.gallery-hero .image-placeholder,
+
+.gallery-hero .image-placeholder,
+
+.image-placeholder {
+
+width: 280px !important;
+
+height: 320px !important;
+
+background: rgba(255, 255, 255, 0.1) !important;
+
+backdrop-filter: blur(20px) !important;
+
+border: 1px solid rgba(255, 255, 255, 0.2) !important;
+
+border-radius: 20px !important;
+
+padding: 15px !important;
+
+box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3) !important;
+
+}
+
+.hero.gallery-hero .architect-image,
+
+.gallery-hero .architect-image,
+
+.architect-image {
+
+width: 250px !important;
+
+height: 290px !important;
+
+border-radius: 16px !important;
+
+object-fit: cover !important;
+
+object-position: center top !important;
+
+}
+
+/* BADGES FLOTANTES */
+
+.hero.gallery-hero .floating-badges,
+
+.gallery-hero .floating-badges,
+
+.floating-badges {
+
+display: flex !important;
+
+flex-direction: row !important;
+
+justify-content: center !important;
+
+gap: 0.5rem !important;
+
+margin-top: 1rem !important;
+
+position: static !important; /* Override del position de desktop */
+
+align-self: center !important;
+
+}
+
+.badge-item {
+
+padding: 6px 10px !important;
+
+font-size: 11px !important;
+
+border-radius: 8px !important;
+
+}
+
+/* BOTONES HERO */
+
+.hero.gallery-hero .hero-buttons,
+
+.gallery-hero .hero-buttons,
+
+.hero-buttons {
+
+position: relative !important;
+
+z-index: 4 !important;
+
+display: flex !important;
+
+flex-direction: column !important;
+
+gap: 1rem !important;
+
+margin-top: 2rem !important;
+
+width: 100% !important;
+
+max-width: 300px !important;
+
+}
+
+.hero.gallery-hero .btn,
+
+.gallery-hero .btn,
+
+.btn {
+
+width: 100% !important;
+
+padding: 1rem !important;
+
+font-size: 1rem !important;
+
+text-align: center !important;
+
+border-radius: 12px !important;
+
+}
+
+}
+
+/* ===== ORIENTACIONES ESPECÍFICAS ===== */
+
+@media screen and (max-width: 768px) and (orientation: landscape) {
+
+.hero.gallery-hero,
+
+.gallery-hero {
+
+min-height: 100vh !important;
+
+padding-top: 70px !important;
+
+}
+
+.hero-content {
+
+flex-direction: row !important;
+
+align-items: center !important;
+
+justify-content: space-around !important;
+
+padding: 1rem !important;
+
+grid-template-columns: 1fr 1fr !important;
+
+}
+
+.hero-text {
+
+flex: 1 !important;
+
+margin-bottom: 0 !important;
+
+margin-right: 1rem !important;
+
+text-align: left !important;
+
+}
+
+.hero-image {
+
+flex: 1 !important;
+
+margin-top: 0 !important;
+
+}
+
+.image-placeholder {
+
+width: 200px !important;
+
+height: 240px !important;
+
+}
+
+.architect-image {
+
+width: 170px !important;
+
+height: 210px !important;
+
+}
+
+}
+
+/* ===== CORRECCIONES ESPECÍFICAS PARA NAVEGADORES MÓVILES ===== */
+
+/* iOS Safari */
+
+@supports (-webkit-touch-callout: none) {
+
+@media screen and (max-width: 768px) {
+
+.hero-background {
+
+background-attachment: scroll !important;
+
+background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') !important;
+
+background-size: cover !important;
+
+background-position: center !important;
+
+background-repeat: no-repeat !important;
+
+min-height: 100vh !important;
+
+height: 100vh !important;
+
+}
+
+.hero.gallery-hero,
+
+.gallery-hero {
+
+background-attachment: scroll !important;
+
+}
+
+}
+
+}
+
+/* Android Chrome */
+
+@media screen and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
+
+.hero-background {
+
+background-attachment: scroll !important;
+
+background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') !important;
+
+transform: translate3d(0, 0, 0) !important;
+
+}
+
+}
+
+/* ===== OVERRIDE CUALQUIER CSS QUE PUEDA ESTAR OCULTANDO LOS ICONOS ===== */
+
+@media screen and (max-width: 768px) {
+
+.social-links,
+
+.social-link,
+
+.social-link img {
+
+display: flex !important;
+
+visibility: visible !important;
+
+opacity: 1 !important;
+
+pointer-events: auto !important;
+
+}
+
+.social-links {
+
+flex-direction: row !important;
+
+}
+
+}
