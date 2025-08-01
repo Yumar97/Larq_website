@@ -1,7 +1,7 @@
-/* ===== CORRECCIÓN CRÍTICA PARA ICONOS MÓVILES ===== */
-/* FORZAR VISIBILIDAD DE ICONOS SOCIALES EN MÓVIL - TODAS LAS ORIENTACIONES */
+/* ===== DISEÑO MÓVIL COMPLETO Y CONSOLIDADO ===== */
+/* Archivo único que contiene todas las correcciones móviles */
 
-/* Forzar visibilidad en TODOS los dispositivos móviles */
+/* ===== ICONOS SOCIALES Y NAVEGACIÓN MÓVIL ===== */
 @media screen and (max-width: 768px) {
     /* FORZAR MOSTRAR ICONOS SOCIALES SIEMPRE EN MÓVIL - LÍNEA HORIZONTAL */
     .social-links {
@@ -93,6 +93,37 @@
         margin-left: 0.5rem !important;
     }
     
+    /* ESTILOS PARA LAS LÍNEAS DEL HAMBURGER */
+    .hamburger span {
+        width: 24px;
+        height: 2px;
+        background: var(--primary-700, #384142);
+        margin: 2px 0;
+        transition: all 0.3s ease;
+        border-radius: 1px;
+        transform-origin: center;
+    }
+    
+    /* ANIMACIÓN DEL HAMBURGER CUANDO ESTÁ ACTIVO */
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+        background: var(--accent-600, #7c9df7);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+        background: var(--accent-600, #7c9df7);
+    }
+    
+    .hamburger.active {
+        background: var(--accent-100, #efeffe);
+    }
+    
     /* ASEGURAR QUE EL MENÚ DE NAVEGACIÓN ESTÉ OCULTO EN MÓVIL PERO FUNCIONAL */
     .nav-menu {
         display: none !important;
@@ -101,15 +132,16 @@
         right: -100% !important;
         width: 280px !important;
         height: 100vh !important;
-        background: rgba(255, 255, 255, 0.95) !important;
+        background: rgba(255, 255, 255, 0.98) !important;
         backdrop-filter: blur(20px) !important;
         flex-direction: column !important;
         justify-content: flex-start !important;
         align-items: flex-start !important;
-        padding: 80px 2rem 2rem !important;
-        transition: right 0.3s ease !important;
+        padding: 120px 2rem 2rem !important;
+        transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
         z-index: 1000 !important;
-        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1) !important;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1) !important;
+        border-left: 1px solid var(--primary-200, #a1a8a9) !important;
     }
     
     /* CUANDO EL MENÚ ESTÁ ACTIVO */
@@ -127,21 +159,21 @@
     .nav-menu .nav-link {
         display: block !important;
         width: 100% !important;
-        padding: 1rem 0 !important;
+        padding: 1rem 1.5rem !important;
         font-size: 1.1rem !important;
-        font-weight: 500 !important;
+        font-weight: 600 !important;
         color: var(--primary-700, #384142) !important;
         text-decoration: none !important;
-        border-bottom: 1px solid rgba(163, 191, 250, 0.2) !important;
+        border-radius: 1rem !important;
         transition: all 0.3s ease !important;
+        text-align: left !important;
     }
     
     .nav-menu .nav-link:hover,
     .nav-menu .nav-link.active {
-        color: var(--accent-600, #7c9df7) !important;
-        background: rgba(163, 191, 250, 0.1) !important;
-        padding-left: 1rem !important;
-        border-radius: 8px !important;
+        background: linear-gradient(135deg, #A3BFFA, #7c9df7) !important;
+        color: white !important;
+        transform: translateX(8px) !important;
     }
     
     /* OVERLAY PARA CERRAR EL MENÚ */
@@ -162,6 +194,11 @@
     .nav-overlay.active {
         opacity: 1 !important;
         visibility: visible !important;
+    }
+    
+    /* PREVENIR SCROLL CUANDO EL MENÚ ESTÁ ABIERTO */
+    body.nav-open {
+        overflow: hidden;
     }
     
     /* EFECTOS HOVER PARA ICONOS */
@@ -199,7 +236,166 @@
     }
 }
 
-/* ESPECÍFICO PARA MÓVILES MUY PEQUEÑOS */
+/* ===== IMAGEN DE FONDO HERO PARA MÓVIL ===== */
+@media screen and (max-width: 768px) {
+    /* Asegurar que el hero tenga la imagen de fondo visible */
+    .gallery-hero {
+        min-height: 100vh !important;
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%) !important;
+        position: relative !important;
+        display: flex !important;
+        align-items: center !important;
+        overflow: hidden !important;
+        padding-top: 120px !important;
+    }
+
+    /* Forzar la imagen de fondo en móvil */
+    .hero-background {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        background-attachment: scroll !important; /* Cambiar de fixed a scroll para móvil */
+        z-index: 1 !important;
+        /* Optimización para móviles */
+        will-change: transform !important;
+        transform: translateZ(0) !important;
+        /* Forzar visibilidad */
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: block !important;
+    }
+
+    /* Asegurar que el overlay esté presente */
+    .hero-overlay {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: linear-gradient(135deg, rgba(26, 26, 46, 0.85) 0%, rgba(22, 33, 62, 0.75) 50%, rgba(15, 52, 96, 0.85) 100%) !important;
+        z-index: 2 !important;
+    }
+
+    /* Asegurar que el contenido esté por encima */
+    .hero-content {
+        position: relative !important;
+        z-index: 3 !important;
+        width: 100% !important;
+        height: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding: 2rem 1rem !important;
+        color: white !important;
+    }
+
+    /* Ajustar el texto del hero para móvil */
+    .hero-text {
+        position: relative !important;
+        z-index: 4 !important;
+        color: white !important;
+        text-align: center !important;
+        margin-bottom: 2rem !important;
+    }
+
+    .hero-text h1 {
+        color: white !important;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8) !important;
+        font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .hero-text h2 {
+        color: white !important;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6) !important;
+        font-size: clamp(1.2rem, 4vw, 2rem) !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .hero-text p {
+        color: rgba(255, 255, 255, 0.9) !important;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
+        font-size: clamp(0.9rem, 3vw, 1.1rem) !important;
+        line-height: 1.6 !important;
+        max-width: 90% !important;
+        margin: 0 auto 2rem !important;
+    }
+
+    /* Ajustar la imagen del arquitecto para móvil */
+    .hero-image {
+        position: relative !important;
+        z-index: 4 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 1rem !important;
+        margin-top: 2rem !important;
+    }
+
+    .image-placeholder {
+        width: 280px !important;
+        height: 320px !important;
+        background: rgba(255, 255, 255, 0.1) !important;
+        backdrop-filter: blur(20px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        border-radius: 20px !important;
+        padding: 15px !important;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3) !important;
+    }
+
+    .architect-image {
+        width: 250px !important;
+        height: 290px !important;
+        border-radius: 16px !important;
+        object-fit: cover !important;
+        object-position: center top !important;
+    }
+
+    /* Ajustar los badges flotantes */
+    .floating-badges {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        gap: 0.5rem !important;
+        margin-top: 1rem !important;
+    }
+
+    .badge-item {
+        padding: 6px 10px !important;
+        font-size: 11px !important;
+        border-radius: 8px !important;
+    }
+
+    /* Asegurar que los botones sean visibles */
+    .hero-buttons {
+        position: relative !important;
+        z-index: 4 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+        margin-top: 2rem !important;
+        width: 100% !important;
+        max-width: 300px !important;
+    }
+
+    .btn {
+        width: 100% !important;
+        padding: 1rem !important;
+        font-size: 1rem !important;
+        text-align: center !important;
+        border-radius: 12px !important;
+    }
+}
+
+/* ===== MÓVILES MUY PEQUEÑOS ===== */
 @media screen and (max-width: 480px) {
     .nav-container {
         padding: 0 0.75rem !important;
@@ -251,9 +447,41 @@
         width: 260px !important;
         padding: 70px 1.5rem 1.5rem !important;
     }
+    
+    /* Hero para móviles pequeños */
+    .gallery-hero {
+        min-height: 100vh !important;
+        padding-top: 100px !important;
+    }
+
+    .hero-content {
+        padding: 1.5rem 0.75rem !important;
+    }
+
+    .image-placeholder {
+        width: 240px !important;
+        height: 280px !important;
+    }
+
+    .architect-image {
+        width: 210px !important;
+        height: 250px !important;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(1.3rem, 6vw, 2rem) !important;
+    }
+
+    .hero-text h2 {
+        font-size: clamp(1rem, 5vw, 1.5rem) !important;
+    }
+
+    .hero-text p {
+        font-size: clamp(0.85rem, 4vw, 1rem) !important;
+    }
 }
 
-/* ESPECÍFICO PARA MÓVILES EXTRA PEQUEÑOS */
+/* ===== MÓVILES EXTRA PEQUEÑOS ===== */
 @media screen and (max-width: 360px) {
     .nav-container {
         padding: 0 0.5rem !important;
@@ -307,6 +535,7 @@
     }
 }
 
+/* ===== ORIENTACIONES ESPECÍFICAS ===== */
 /* FORZAR EN ORIENTACIÓN PORTRAIT (VERTICAL) */
 @media screen and (max-width: 768px) and (orientation: portrait) {
     .social-links {
@@ -337,9 +566,43 @@
         visibility: visible !important;
         opacity: 1 !important;
     }
+    
+    /* Hero en landscape */
+    .gallery-hero {
+        min-height: 100vh !important;
+        padding-top: 80px !important;
+    }
+
+    .hero-content {
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-around !important;
+        padding: 1rem !important;
+    }
+
+    .hero-text {
+        flex: 1 !important;
+        margin-bottom: 0 !important;
+        margin-right: 1rem !important;
+    }
+
+    .hero-image {
+        flex: 1 !important;
+        margin-top: 0 !important;
+    }
+
+    .image-placeholder {
+        width: 200px !important;
+        height: 240px !important;
+    }
+
+    .architect-image {
+        width: 170px !important;
+        height: 210px !important;
+    }
 }
 
-/* OVERRIDE CUALQUIER CSS QUE PUEDA ESTAR OCULTANDO LOS ICONOS */
+/* ===== OVERRIDE CUALQUIER CSS QUE PUEDA ESTAR OCULTANDO LOS ICONOS ===== */
 @media screen and (max-width: 768px) {
     .social-links,
     .social-link,
@@ -355,7 +618,36 @@
     }
 }
 
-/* ASEGURAR QUE EN DESKTOP SE MANTENGA EL DISEÑO ORIGINAL */
+/* ===== CORRECCIONES ESPECÍFICAS PARA NAVEGADORES MÓVILES ===== */
+/* Corrección adicional para iOS Safari */
+@supports (-webkit-touch-callout: none) {
+    @media screen and (max-width: 768px) {
+        .hero-background {
+            background-attachment: scroll !important;
+            background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') !important;
+            background-size: cover !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            min-height: 100vh !important;
+            height: 100vh !important;
+        }
+        
+        .gallery-hero {
+            background-attachment: scroll !important;
+        }
+    }
+}
+
+/* Corrección para Android Chrome */
+@media screen and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
+    .hero-background {
+        background-attachment: scroll !important;
+        background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') !important;
+        transform: translate3d(0, 0, 0) !important;
+    }
+}
+
+/* ===== ASEGURAR QUE EN DESKTOP SE MANTENGA EL DISEÑO ORIGINAL ===== */
 @media screen and (min-width: 769px) {
     .social-links {
         order: initial !important;
